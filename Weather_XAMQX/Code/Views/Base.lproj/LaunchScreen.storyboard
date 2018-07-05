@@ -58,6 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1242×2208_bg" width="1242" height="2208"/>
+        <image name="1242×2208_bg" width="414" height="736"/>
     </resources>
 </document>

@@ -1,0 +1,63 @@
+//
+//  城市天气预报模型
+//
+//  CityModel.m
+//  Weather_XAMQX
+//
+//  Created by Jack on 2018/7/5.
+//  Copyright © 2018年 com.dyfc. All rights reserved.
+//
+
+#import "WeatherForcastModel.h"
+
+@implementation WeatherForcastModel
+
++ (NSString *)getPrimaryKey {
+    
+    return @"oid";
+}
+
++ (NSString *)getTableName {
+    
+    return @"forcast";
+}
+
++ (int)getTableVersion {
+    
+    return 20150423;
+}
+
+- (id)initWithCityModel:(CityModel *)aCityModel {
+    
+    if (self = [super init]) {
+        
+        if (aCityModel != nil) {
+            
+            self.oid = aCityModel.target_id;
+            
+            self.isLocation = 0;
+            
+            self.name = aCityModel.name;
+            
+            self.lat = aCityModel.lat;
+            
+            self.lng = aCityModel.lng;
+            
+            self.english_name = aCityModel.english_name;
+            
+            self.traget_id = aCityModel.target_id;
+            
+            self.short_name = aCityModel.short_name;
+            
+            self.full_name = aCityModel.full_name;
+            
+            self.post_code = aCityModel.post_code;
+            
+            self.addDate = [NSData data];
+        }
+    }
+    
+    return self;
+}
+
+@end
