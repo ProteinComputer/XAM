@@ -28,6 +28,8 @@
 		04C4517620EE908C004466DB /* g_region.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517520EE908C004466DB /* g_region.txt */; };
 		04C4517920EE9099004466DB /* g_region_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517720EE9099004466DB /* g_region_a.txt */; };
 		04C4517A20EE9099004466DB /* g_region.sql in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517820EE9099004466DB /* g_region.sql */; };
+		04C4517E20EEA0DC004466DB /* CreateCityDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4517D20EEA0DC004466DB /* CreateCityDB.m */; };
+		04C4518220EEA167004466DB /* NSString+CatchPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4518020EEA167004466DB /* NSString+CatchPath.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,10 @@
 		04C4517520EE908C004466DB /* g_region.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region.txt; sourceTree = "<group>"; };
 		04C4517720EE9099004466DB /* g_region_a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region_a.txt; sourceTree = "<group>"; };
 		04C4517820EE9099004466DB /* g_region.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region.sql; sourceTree = "<group>"; };
+		04C4517C20EEA0DC004466DB /* CreateCityDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateCityDB.h; sourceTree = "<group>"; };
+		04C4517D20EEA0DC004466DB /* CreateCityDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateCityDB.m; sourceTree = "<group>"; };
+		04C4518020EEA167004466DB /* NSString+CatchPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CatchPath.m"; sourceTree = "<group>"; };
+		04C4518120EEA167004466DB /* NSString+CatchPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CatchPath.h"; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,9 +137,7 @@
 		044665EB20EB6DDF00AD3726 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04C4517520EE908C004466DB /* g_region.txt */,
-				04C4517720EE9099004466DB /* g_region_a.txt */,
-				04C4517820EE9099004466DB /* g_region.sql */,
+				04C4518420EEA4CF004466DB /* SQL */,
 				044665E220EB6DA600AD3726 /* Info.plist */,
 				044665DD20EB6DA600AD3726 /* Assets.xcassets */,
 				0446660420ECE1FA00AD3726 /* PrefixHeader.pch */,
@@ -190,6 +194,8 @@
 		044665F220EB70E200AD3726 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04C4517F20EEA12C004466DB /* Categories */,
+				04C4517B20EEA0BA004466DB /* DataBase */,
 				04C4516E20EE8B5C004466DB /* WebImage */,
 				04C4516C20EE6607004466DB /* NetWork */,
 			);
@@ -323,6 +329,42 @@
 				04C4517320EE8C51004466DB /* UIImageView+SDWebImage.m */,
 			);
 			path = WebImage;
+			sourceTree = "<group>";
+		};
+		04C4517B20EEA0BA004466DB /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				04C4517C20EEA0DC004466DB /* CreateCityDB.h */,
+				04C4517D20EEA0DC004466DB /* CreateCityDB.m */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		04C4517F20EEA12C004466DB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				04C4518320EEA16D004466DB /* NSString */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		04C4518320EEA16D004466DB /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				04C4518120EEA167004466DB /* NSString+CatchPath.h */,
+				04C4518020EEA167004466DB /* NSString+CatchPath.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		04C4518420EEA4CF004466DB /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				04C4517520EE908C004466DB /* g_region.txt */,
+				04C4517720EE9099004466DB /* g_region_a.txt */,
+				04C4517820EE9099004466DB /* g_region.sql */,
+			);
+			path = SQL;
 			sourceTree = "<group>";
 		};
 		4514A59F88D6A064EF1984FF /* Pods */ = {
@@ -463,11 +505,13 @@
 				04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */,
 				04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */,
 				04C4516520EDF911004466DB /* CityModel.m in Sources */,
+				04C4518220EEA167004466DB /* NSString+CatchPath.m in Sources */,
 				0446660720ECE43300AD3726 /* MonitoringViewController.m in Sources */,
 				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
 				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
 				0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */,
+				04C4517E20EEA0DC004466DB /* CreateCityDB.m in Sources */,
 				044665F720ECDB4300AD3726 /* MainTabBarController.m in Sources */,
 				0446660A20ECE44100AD3726 /* WarningViewController.m in Sources */,
 				044665D620EB6DA500AD3726 /* AppDelegate.m in Sources */,

@@ -49,6 +49,11 @@ static NSInteger kCollectionViewCounts = 11;
     
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Getters and Setters.
 
 - (UIPageControl *)pageControl {

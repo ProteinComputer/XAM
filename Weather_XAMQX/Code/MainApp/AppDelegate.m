@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "CreateCityDB.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,8 +18,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSThread sleepForTimeInterval:1.0];
+    
+    //[NSThread sleepForTimeInterval:1.0];
+    
+    CreateCityDB * createCitiesDB = [CreateCityDB new];
+    [createCitiesDB initCitiesDatabase];
+    
+    
     TTT
+    
     return YES;
 }
 

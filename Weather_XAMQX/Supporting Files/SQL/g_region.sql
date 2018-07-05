@@ -1,30 +1,7 @@
-/*
- Navicat Premium Data Transfer
 
- Source Server         : clover 2
- Source Server Type    : SQLite
- Source Server Version : 3007010
- Source Database       : main
-
- Target Server Type    : SQLite
- Target Server Version : 3007010
- File Encoding         : utf-8
-
- Date: 05/08/2017 16:19:07 PM
-*/
-
-PRAGMA foreign_keys = false;
-
--- ----------------------------
---  Table structure for "g_region_new”
--- ----------------------------
 DROP TABLE IF EXISTS "g_region_new";
 CREATE TABLE [g_region_new] ([oid] TEXT PRIMARY KEY NOT NULL UNIQUE, [name] TEXT, [level] INTEGER, [short_name] TEXT, [full_name] TEXT, [english_name] TEXT, [pid] TEXT, [post_code] TEXT, [lat] REAL, [lng] REAL, [target_id] TEXT, [target_cid] TEXT, [target_pid] TEXT, [target_nid] TEXT, [target_sid] TEXT, [target_real] BOOLEAN, shortName_pinyin text, indexChar text, shortName_ShortPinyin text);
 
--- ----------------------------
---  Records of "g_region_new"
--- ----------------------------
-BEGIN;
 INSERT INTO "g_region_new" VALUES (110000, '北京', 1, '北京', '北京', 'Beijing', '', '', 39.904989, 116.405285, 10000, '', 1002, '', '', X'30', 'bei jing', 'B', 'BJ');
 INSERT INTO "g_region_new" VALUES (110100, '北京市', 2, '北京', '北京,北京市', 'Beijing', 110000, 100000, 39.904989, 116.405285, 10000, '', 1002, 101010100, 54511, X'31', 'bei jing', 'B', 'BJ');
 INSERT INTO "g_region_new" VALUES (110101, '东城区', 3, '东城', '北京,北京市,东城区', 'Dongcheng', 110100, 100000, 39.93157, 116.41005, 10000, '', 1002, '', '', X'30', 'dong cheng', 'D', 'DC');
@@ -3821,6 +3798,4 @@ INSERT INTO "g_region_new" VALUES ('C0796', '九龙乡', 3, '九龙', '兴安盟
 INSERT INTO "g_region_new" VALUES ('C0802', '学田乡', 3, '学田', '兴安盟,突泉,学田乡', null, 152224, null, null, null, null, null, null, null, null, null, null, 'X', 'XTX');
 INSERT INTO "g_region_new" VALUES ('C0806', '太平乡', 3, '太平', '兴安盟,突泉,太平乡', null, 152224, null, null, null, null, null, null, null, null, null, null, 'T', 'TPX');
 INSERT INTO "g_region_new" VALUES ('C0888', '宝石乡', 3, '宝石', '兴安盟,突泉,宝石乡', null, 152224, null, null, null, null, null, null, null, null, null, null, 'B', 'BSX');
-COMMIT;
 
-PRAGMA foreign_keys = true;
