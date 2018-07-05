@@ -11,6 +11,8 @@ target 'Weather_XAMQX' do
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'MJRefresh'
   pod 'YYModel'
+  pod 'FMDB'
+  pod 'LKDBHelper'
   
   # vendors end
 

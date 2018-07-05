@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "CityModel.h"
 
-@interface WeatherForcastModel : NSObject
+@interface WeatherForecastModel : NSObject
 
 @property (nonatomic, copy) NSString * oid;
 

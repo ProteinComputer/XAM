@@ -20,8 +20,14 @@
 		0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446660C20ECE45100AD3726 /* ForecastViewController.m */; };
 		0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446660F20ECE45D00AD3726 /* DecisionViewController.m */; };
 		04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4515D20ED3CA3004466DB /* ZDNavigationController.m */; };
-		04C4516120EDF524004466DB /* WeatherForcastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516020EDF524004466DB /* WeatherForcastModel.m */; };
+		04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516020EDF524004466DB /* WeatherForecastModel.m */; };
 		04C4516520EDF911004466DB /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516420EDF911004466DB /* CityModel.m */; };
+		04C4516B20EE12A6004466DB /* CityWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */; };
+		04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516F20EE8C1D004466DB /* HTTPTool.m */; };
+		04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4517320EE8C51004466DB /* UIImageView+SDWebImage.m */; };
+		04C4517620EE908C004466DB /* g_region.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517520EE908C004466DB /* g_region.txt */; };
+		04C4517920EE9099004466DB /* g_region_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517720EE9099004466DB /* g_region_a.txt */; };
+		04C4517A20EE9099004466DB /* g_region.sql in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517820EE9099004466DB /* g_region.sql */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -51,10 +57,19 @@
 		0446660F20ECE45D00AD3726 /* DecisionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecisionViewController.m; sourceTree = "<group>"; };
 		04C4515C20ED3CA3004466DB /* ZDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDNavigationController.h; sourceTree = "<group>"; };
 		04C4515D20ED3CA3004466DB /* ZDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDNavigationController.m; sourceTree = "<group>"; };
-		04C4515F20EDF524004466DB /* WeatherForcastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForcastModel.h; sourceTree = "<group>"; };
-		04C4516020EDF524004466DB /* WeatherForcastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForcastModel.m; sourceTree = "<group>"; };
+		04C4515F20EDF524004466DB /* WeatherForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastModel.h; sourceTree = "<group>"; };
+		04C4516020EDF524004466DB /* WeatherForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastModel.m; sourceTree = "<group>"; };
 		04C4516320EDF911004466DB /* CityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
 		04C4516420EDF911004466DB /* CityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		04C4516920EE12A6004466DB /* CityWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		04C4516F20EE8C1D004466DB /* HTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPTool.m; sourceTree = "<group>"; };
+		04C4517020EE8C1D004466DB /* HTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPTool.h; sourceTree = "<group>"; };
+		04C4517220EE8C51004466DB /* UIImageView+SDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SDWebImage.h"; sourceTree = "<group>"; };
+		04C4517320EE8C51004466DB /* UIImageView+SDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SDWebImage.m"; sourceTree = "<group>"; };
+		04C4517520EE908C004466DB /* g_region.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region.txt; sourceTree = "<group>"; };
+		04C4517720EE9099004466DB /* g_region_a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region_a.txt; sourceTree = "<group>"; };
+		04C4517820EE9099004466DB /* g_region.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_region.sql; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +131,9 @@
 		044665EB20EB6DDF00AD3726 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04C4517520EE908C004466DB /* g_region.txt */,
+				04C4517720EE9099004466DB /* g_region_a.txt */,
+				04C4517820EE9099004466DB /* g_region.sql */,
 				044665E220EB6DA600AD3726 /* Info.plist */,
 				044665DD20EB6DA600AD3726 /* Assets.xcassets */,
 				0446660420ECE1FA00AD3726 /* PrefixHeader.pch */,
@@ -134,8 +152,9 @@
 		044665ED20EB706D00AD3726 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				044665DA20EB6DA500AD3726 /* Main.storyboard */,
-				044665DF20EB6DA600AD3726 /* LaunchScreen.storyboard */,
+				04C4516820EE126C004466DB /* Weather */,
+				04C4516720EDFE3C004466DB /* LaunchScreen */,
+				04C4516620EDFE17004466DB /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,7 +168,7 @@
 				044665FD20ECE06100AD3726 /* Warning */,
 				044665FC20ECE02900AD3726 /* Monitoring */,
 				044665F820ECDB6300AD3726 /* Weather */,
-				044665F420ECDAE700AD3726 /* MainNavigation */,
+				044665F420ECDAE700AD3726 /* Main */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +190,8 @@
 		044665F220EB70E200AD3726 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04C4516E20EE8B5C004466DB /* WebImage */,
+				04C4516C20EE6607004466DB /* NetWork */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,13 +206,13 @@
 			path = MainApp;
 			sourceTree = "<group>";
 		};
-		044665F420ECDAE700AD3726 /* MainNavigation */ = {
+		044665F420ECDAE700AD3726 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				044665F520ECDB4300AD3726 /* MainTabBarController.h */,
 				044665F620ECDB4300AD3726 /* MainTabBarController.m */,
 			);
-			path = MainNavigation;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		044665F820ECDB6300AD3726 /* Weather */ = {
@@ -253,12 +274,55 @@
 		04C4516220EDF83A004466DB /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				04C4515F20EDF524004466DB /* WeatherForcastModel.h */,
-				04C4516020EDF524004466DB /* WeatherForcastModel.m */,
+				04C4515F20EDF524004466DB /* WeatherForecastModel.h */,
+				04C4516020EDF524004466DB /* WeatherForecastModel.m */,
 				04C4516320EDF911004466DB /* CityModel.h */,
 				04C4516420EDF911004466DB /* CityModel.m */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		04C4516620EDFE17004466DB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				044665DA20EB6DA500AD3726 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04C4516720EDFE3C004466DB /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				044665DF20EB6DA600AD3726 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		04C4516820EE126C004466DB /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				04C4516920EE12A6004466DB /* CityWeatherCollectionViewCell.h */,
+				04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		04C4516C20EE6607004466DB /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				04C4517020EE8C1D004466DB /* HTTPTool.h */,
+				04C4516F20EE8C1D004466DB /* HTTPTool.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		04C4516E20EE8B5C004466DB /* WebImage */ = {
+			isa = PBXGroup;
+			children = (
+				04C4517220EE8C51004466DB /* UIImageView+SDWebImage.h */,
+				04C4517320EE8C51004466DB /* UIImageView+SDWebImage.m */,
+			);
+			path = WebImage;
 			sourceTree = "<group>";
 		};
 		4514A59F88D6A064EF1984FF /* Pods */ = {
@@ -337,6 +401,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C4517620EE908C004466DB /* g_region.txt in Resources */,
+				04C4517920EE9099004466DB /* g_region_a.txt in Resources */,
+				04C4517A20EE9099004466DB /* g_region.sql in Resources */,
 				044665E120EB6DA600AD3726 /* LaunchScreen.storyboard in Resources */,
 				044665DE20EB6DA600AD3726 /* Assets.xcassets in Resources */,
 				044665DC20EB6DA500AD3726 /* Main.storyboard in Resources */,
@@ -390,13 +457,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				044665E420EB6DA600AD3726 /* main.m in Sources */,
+				04C4516B20EE12A6004466DB /* CityWeatherCollectionViewCell.m in Sources */,
 				0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */,
 				0446660320ECE19000AD3726 /* BaseViewController.m in Sources */,
 				04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */,
+				04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */,
 				04C4516520EDF911004466DB /* CityModel.m in Sources */,
 				0446660720ECE43300AD3726 /* MonitoringViewController.m in Sources */,
-				04C4516120EDF524004466DB /* WeatherForcastModel.m in Sources */,
+				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
+				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
 				0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */,
 				044665F720ECDB4300AD3726 /* MainTabBarController.m in Sources */,
 				0446660A20ECE44100AD3726 /* WarningViewController.m in Sources */,

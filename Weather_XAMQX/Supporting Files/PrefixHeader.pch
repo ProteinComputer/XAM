@@ -14,6 +14,9 @@
 
 #define TTT NSLog(@"Define Macro Success!");
 
+#define SERVER_HOST @""
+
+#define API_Weather @""
 
 /* pch end */
 

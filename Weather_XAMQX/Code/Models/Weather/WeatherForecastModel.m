@@ -8,9 +8,9 @@
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
 
-#import "WeatherForcastModel.h"
+#import "WeatherForecastModel.h"
 
-@implementation WeatherForcastModel
+@implementation WeatherForecastModel
 
 + (NSString *)getPrimaryKey {
     
