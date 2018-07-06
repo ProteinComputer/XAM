@@ -1,7 +1,7 @@
 //
 //  预警图标
 //
-//  ForecastWarningView.h
+//  WeatherWarningView.h
 //  Weather_XAMQX
 //
 //  Created by Jack on 2018/7/6.
@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForecastWarningView : UIView
+@interface WeatherWarningView : UIView
 
 @property (nonatomic,strong) UIButton *     headImageButton;
 

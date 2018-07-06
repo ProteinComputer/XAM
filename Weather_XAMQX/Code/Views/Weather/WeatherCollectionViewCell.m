@@ -6,13 +6,14 @@
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
 
-#import "CityWeatherCollectionViewCell.h"
+#import "WeatherCollectionViewCell.h"
 
-#import "ForecastWarningView.h"
+#import "WeatherWarningView.h"
+#import "WeatherLiveElementsTableViewCell.h"
 
 static NSInteger kSection = 2;
 
-@interface CityWeatherCollectionViewCell () <UITableViewDelegate, UITableViewDataSource>
+@interface WeatherCollectionViewCell () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 
@@ -26,7 +27,7 @@ static NSInteger kSection = 2;
 
 @end
 
-@implementation CityWeatherCollectionViewCell
+@implementation WeatherCollectionViewCell
 
 #pragma mark - Getters and setters.
 
@@ -167,6 +168,59 @@ static NSInteger kSection = 2;
         
         static NSString * kIdentifier = @"ForecastSKCell";
         
+        WeatherLiveElementsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kIdentifier];
+        
+        if (cell == nil) {
+            
+            cell = [WeatherLiveElementsTableViewCell new];
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        
+        NSDictionary * zdskDic = resultDic[@"zdsk"];
+        NSDictionary * timeDic = resultDic[@"time"];
+        
+        /* 下面这段并没有执行 ？ */
+        if (zdskDic != nil && [zdskDic allKeys].count > 5) {
+            
+            cell.weatherContentLabel.text = [NSString stringWithFormat:@"%@", zdskDic[@"three_status"]];
+            
+            cell.temperatureLabel.text = [NSString stringWithFormat:@"%@", zdskDic[@"temperature"]];
+            
+            cell.humidityLabel.text = [NSString stringWithFormat:@"%@%@", zdskDic[@"humidity"], @"%"];
+            
+            cell.rainLabel.text = [NSString stringWithFormat:@"%@mm", zdskDic[@"rain"]];
+            
+            cell.airPressureLabel.text = [NSString stringWithFormat:@"%@hPa", zdskDic[@"press"]];
+            
+            cell.windLabel.text = [NSString stringWithFormat:@"%@,%@m/s", zdskDic[@"wind_direction_cn"], zdskDic[@"wind_speed"]];
+            
+            cell.aqiLabel.text = [NSString stringWithFormat:@"AQI %@",zdskDic[@"air_aqi"]];
+            cell.sunSetOneLabel.text = [NSString stringWithFormat:@"%@",zdskDic[@"sunset_one"]];
+            cell.sunSetTwoLabel.text = [NSString stringWithFormat:@"%@",zdskDic[@"sunset_two"]];
+            
+            NSString * dateString = timeDic[@"issue_time"];
+            
+            NSDateFormatter *dateFormatter=[[NSDateFormatter alloc]init];
+            [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+            
+            NSDate *date=[dateFormatter dateFromString:dateString];
+            
+            NSDateFormatter *showDateFormatter=[[NSDateFormatter alloc]init];
+            [showDateFormatter setDateFormat:@"HH:mm"];
+            
+            NSString *dateString2=[showDateFormatter stringFromDate:date];
+            cell.timeLabel.text = [NSString stringWithFormat:@"兴安盟气象局%@发布",dateString2];
+            
+        } else {
+            UILabel*label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 30)];
+            label.backgroundColor = [UIColor clearColor];
+            label.textAlignment = NSTextAlignmentCenter ;
+            label.font = [UIFont systemFontOfSize:13];
+            label.textColor = [UIColor whiteColor];
+            label.text = @"暂无数据";
+            [cell addSubview:label];
+        }
     }
     
     return nil;
@@ -223,7 +277,7 @@ static NSInteger kSection = 2;
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 35)];
     headerView.backgroundColor = [UIColor redColor];
     
-    ForecastWarningView * warningView = [[ForecastWarningView alloc] initWithFrame:headerView.bounds];
+    WeatherWarningView * warningView = [[WeatherWarningView alloc] initWithFrame:headerView.bounds];
     
     [headerView addSubview:warningView];
     

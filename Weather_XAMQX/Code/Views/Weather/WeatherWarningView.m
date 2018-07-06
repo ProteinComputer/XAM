@@ -1,23 +1,23 @@
 //
 //  预警图标
 //
-//  ForecastWarningView.m
+//  WeatherWarningView.m
 //  Weather_XAMQX
 //
 //  Created by Jack on 2018/7/6.
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
 
-#import "ForecastWarningView.h"
+#import "WeatherWarningView.h"
 
-@interface ForecastWarningView ()
+@interface WeatherWarningView ()
 
 @property (nonatomic,strong) UILabel *      titleLabel;
 @property (nonatomic,strong) UIImageView *  headImageView;
 
 @end
 
-@implementation ForecastWarningView
+@implementation WeatherWarningView
 
 #pragma mark - Life cycle.
 

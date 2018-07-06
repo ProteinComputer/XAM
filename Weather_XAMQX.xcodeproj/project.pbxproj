@@ -22,7 +22,6 @@
 		04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4515D20ED3CA3004466DB /* ZDNavigationController.m */; };
 		04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516020EDF524004466DB /* WeatherForecastModel.m */; };
 		04C4516520EDF911004466DB /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516420EDF911004466DB /* CityModel.m */; };
-		04C4516B20EE12A6004466DB /* CityWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */; };
 		04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516F20EE8C1D004466DB /* HTTPTool.m */; };
 		04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4517320EE8C51004466DB /* UIImageView+SDWebImage.m */; };
 		04C4517620EE908C004466DB /* g_region.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C4517520EE908C004466DB /* g_region.txt */; };
@@ -37,9 +36,10 @@
 		04C4519920EF484B004466DB /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4519020EF484B004466DB /* SBJsonBase.m */; };
 		04C4519A20EF484B004466DB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4519220EF484B004466DB /* SBJsonParser.m */; };
 		04C4519B20EF484B004466DB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4519420EF484B004466DB /* SBJsonWriter.m */; };
-		04C451EE20EF571A004466DB /* ForecastWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C451ED20EF571A004466DB /* ForecastWarningView.m */; };
-		04C4531F20EF6A81004466DB /* ForecastSKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4531E20EF6A81004466DB /* ForecastSKTableViewCell.m */; };
+		04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C451ED20EF571A004466DB /* WeatherWarningView.m */; };
 		04C4532220EF70E9004466DB /* NSString+FontExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532020EF70E9004466DB /* NSString+FontExtention.m */; };
+		04C4532420EF8661004466DB /* WeatherLiveElementsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */; };
+		04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532520EF872F004466DB /* WeatherCollectionViewCell.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +73,7 @@
 		04C4516020EDF524004466DB /* WeatherForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastModel.m; sourceTree = "<group>"; };
 		04C4516320EDF911004466DB /* CityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
 		04C4516420EDF911004466DB /* CityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
-		04C4516920EE12A6004466DB /* CityWeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityWeatherCollectionViewCell.h; sourceTree = "<group>"; };
-		04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityWeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		04C4516920EE12A6004466DB /* WeatherCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewCell.h; sourceTree = "<group>"; };
 		04C4516F20EE8C1D004466DB /* HTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPTool.m; sourceTree = "<group>"; };
 		04C4517020EE8C1D004466DB /* HTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPTool.h; sourceTree = "<group>"; };
 		04C4517220EE8C51004466DB /* UIImageView+SDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SDWebImage.h"; sourceTree = "<group>"; };
@@ -100,12 +99,13 @@
 		04C4519220EF484B004466DB /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		04C4519320EF484B004466DB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		04C4519420EF484B004466DB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		04C4519C20EF4E81004466DB /* ForecastWarningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastWarningView.h; sourceTree = "<group>"; };
-		04C451ED20EF571A004466DB /* ForecastWarningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastWarningView.m; sourceTree = "<group>"; };
-		04C4531D20EF6A81004466DB /* ForecastSKTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastSKTableViewCell.h; sourceTree = "<group>"; };
-		04C4531E20EF6A81004466DB /* ForecastSKTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastSKTableViewCell.m; sourceTree = "<group>"; };
+		04C4519C20EF4E81004466DB /* WeatherWarningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherWarningView.h; sourceTree = "<group>"; };
+		04C451ED20EF571A004466DB /* WeatherWarningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherWarningView.m; sourceTree = "<group>"; };
+		04C4531D20EF6A81004466DB /* WeatherLiveElementsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherLiveElementsTableViewCell.h; sourceTree = "<group>"; };
 		04C4532020EF70E9004466DB /* NSString+FontExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontExtention.m"; sourceTree = "<group>"; };
 		04C4532120EF70E9004466DB /* NSString+FontExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontExtention.h"; sourceTree = "<group>"; };
+		04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLiveElementsTableViewCell.m; sourceTree = "<group>"; };
+		04C4532520EF872F004466DB /* WeatherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -338,12 +338,12 @@
 		04C4516820EE126C004466DB /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				04C4516920EE12A6004466DB /* CityWeatherCollectionViewCell.h */,
-				04C4516A20EE12A6004466DB /* CityWeatherCollectionViewCell.m */,
-				04C4519C20EF4E81004466DB /* ForecastWarningView.h */,
-				04C451ED20EF571A004466DB /* ForecastWarningView.m */,
-				04C4531D20EF6A81004466DB /* ForecastSKTableViewCell.h */,
-				04C4531E20EF6A81004466DB /* ForecastSKTableViewCell.m */,
+				04C4516920EE12A6004466DB /* WeatherCollectionViewCell.h */,
+				04C4532520EF872F004466DB /* WeatherCollectionViewCell.m */,
+				04C4519C20EF4E81004466DB /* WeatherWarningView.h */,
+				04C451ED20EF571A004466DB /* WeatherWarningView.m */,
+				04C4531D20EF6A81004466DB /* WeatherLiveElementsTableViewCell.h */,
+				04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -568,24 +568,24 @@
 				044665E420EB6DA600AD3726 /* main.m in Sources */,
 				04C4532220EF70E9004466DB /* NSString+FontExtention.m in Sources */,
 				04C4519B20EF484B004466DB /* SBJsonWriter.m in Sources */,
-				04C4516B20EE12A6004466DB /* CityWeatherCollectionViewCell.m in Sources */,
 				0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */,
 				0446660320ECE19000AD3726 /* BaseViewController.m in Sources */,
 				04C4519620EF484B004466DB /* NSObject+SBJSON.m in Sources */,
 				04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */,
 				04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */,
 				04C4519720EF484B004466DB /* NSString+SBJSON.m in Sources */,
-				04C4531F20EF6A81004466DB /* ForecastSKTableViewCell.m in Sources */,
 				04C4516520EDF911004466DB /* CityModel.m in Sources */,
 				04C4518220EEA167004466DB /* NSString+CatchPath.m in Sources */,
 				04C4519920EF484B004466DB /* SBJsonBase.m in Sources */,
 				0446660720ECE43300AD3726 /* MonitoringViewController.m in Sources */,
-				04C451EE20EF571A004466DB /* ForecastWarningView.m in Sources */,
+				04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */,
 				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
+				04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */,
 				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
 				04C4519A20EF484B004466DB /* SBJsonParser.m in Sources */,
 				04C4519820EF484B004466DB /* SBJSON.m in Sources */,
+				04C4532420EF8661004466DB /* WeatherLiveElementsTableViewCell.m in Sources */,
 				0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */,
 				04C4517E20EEA0DC004466DB /* CreateCityDB.m in Sources */,
 				044665F720ECDB4300AD3726 /* MainTabBarController.m in Sources */,

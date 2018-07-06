@@ -11,7 +11,7 @@
 #import "WeatherViewController.h"
 
 #import "WeatherForecastModel.h"
-#import "CityWeatherCollectionViewCell.h"
+#import "WeatherCollectionViewCell.h"
 
 static NSInteger kCollectionViewCounts = 11;
 
@@ -95,7 +95,7 @@ static NSInteger kCollectionViewCounts = 11;
         
         for (int i = 0; i <= kCollectionViewCounts; i++) {
             
-            [_collectionView registerClass:[CityWeatherCollectionViewCell class] forCellWithReuseIdentifier:[NSString stringWithFormat:@"WeatheCollectionViewCellIdentifier %d", i]];
+            [_collectionView registerClass:[WeatherCollectionViewCell class] forCellWithReuseIdentifier:[NSString stringWithFormat:@"WeatheCollectionViewCellIdentifier %d", i]];
         }
         
         [self.showContentView addSubview:_collectionView];
