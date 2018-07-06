@@ -11,12 +11,32 @@
 
 /* pch start */
 
+#import "MJRefresh.h"
+#import "JSON.h"
+#import "FMDB.h"
+#import "NSString+FontExtention.h"
+#import "NSString+CatchPath.h"
+
 
 #define TTT NSLog(@"Define Macro Success!");
 
 #define SERVER_HOST @""
 
 #define API_Weather @""
+
+#define SCREEN_WIDTH  [UIScreen mainScreen ].bounds.size.width
+
+#define SCREEN_HEIGHT [UIScreen mainScreen ].bounds.size.height
+
+#undef    RGBA
+#define RGBA(R,G,B,A)    [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
+
+#define CURRENT_TEMPERATURE_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.f]
+
+#define CURRENT_TEMPERATURE_UNIT_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.f]
+
+#define LABEL_FONT_15 [UIFont systemFontOfSize:15]
+
 
 /* pch end */
 

@@ -26,6 +26,8 @@
 
 @property (nonatomic, weak) id <CityWeatherCollectionViewCellDelegate> delegate;
 
+@property (nonatomic, strong) WeatherForecastModel * weatherForecastModel;
+
 - (void)setNoData:(BOOL)showNodata;
 
 - (void)loadNewData;

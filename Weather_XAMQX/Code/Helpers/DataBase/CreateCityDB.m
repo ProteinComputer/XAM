@@ -7,8 +7,6 @@
 //
 
 #import "CreateCityDB.h"
-#import "FMDB.h"
-#import "NSString+CatchPath.h"
 
 static NSString * kDataBaseName = @"cities.db";
 
