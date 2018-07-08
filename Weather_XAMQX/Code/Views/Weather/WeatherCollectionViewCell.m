@@ -10,6 +10,9 @@
 
 #import "WeatherWarningView.h"
 #import "WeatherLiveElementsTableViewCell.h"
+#import "TemperatureCurveTableViewCell.h"
+#import "LifeIndexTableViewCell.h"
+#import "SunSetTableViewCell.h"
 
 static NSInteger kSection = 2;
 
@@ -72,6 +75,14 @@ static NSInteger kSection = 2;
     return _noInfoButton;
 }
 
+- (NSArray *)forecastDataList {
+    
+    if (!_forecastDataList) {
+        _forecastDataList = [NSArray array];
+    }
+    return _forecastDataList;
+}
+
 #pragma mark - Handlers.
 
 - (void)setHeaderRefresh {
@@ -128,6 +139,8 @@ static NSInteger kSection = 2;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
+    
     if (self.weatherForecastModel.forcastContent.length < 100) {
         
         [self loadNewData];
@@ -161,8 +174,6 @@ static NSInteger kSection = 2;
     } else {
         self.noForecastLabel.hidden = YES;
     }
-    
-    NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
     if (indexPath.row == 1) {
         
@@ -221,9 +232,125 @@ static NSInteger kSection = 2;
             label.text = @"暂无数据";
             [cell addSubview:label];
         }
+        
+        if (timeDic != nil) {
+            
+            cell.festivalLabel.text = timeDic[@"montor_festival"];
+            cell.lunarCalendarLabel.text = timeDic[@"montor_solarterm"];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    } else if (indexPath.row == 2) {
+        
+        static NSString * identifier = @"TemperatureCurveView";
+        
+        TemperatureCurveTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        self.forecastDataList = resultDic[@"forecast"];
+        
+        cell.weatherList = self.forecastDataList;
+        
+        if (cell == nil) {
+            
+            cell = [[TemperatureCurveTableViewCell alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 350) forecastDataArray:self.forecastDataList];
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+    } else {
+        
+        NSArray * lifeIndexArray = resultDic[@"lifeindex"];
+        
+        if (lifeIndexArray != nil && lifeIndexArray.count >0) {
+            
+            if (indexPath.row == 3) {
+                
+                static NSString * identifier = @"LifeIndexCell";
+                
+                LifeIndexTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+                
+                if (!cell) {
+                    cell = [[LifeIndexTableViewCell alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, lifeIndexArray.count / 2 * (70 + 10) + lifeIndexArray.count % 2 * (70 + 10))];
+                }
+                
+                cell.backgroundColor = [UIColor clearColor];
+                cell.userInteractionEnabled = NO;
+                cell.indexArray = lifeIndexArray;
+                [cell.collectionView reloadData];
+                return cell;
+            } else if (indexPath.row == 4) {
+                
+                static NSString * identifier = @"SunSetTableViewCell";
+                
+                SunSetTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+                
+                if (!cell) {
+                    cell = [[SunSetTableViewCell alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+                }
+                
+                cell.backgroundColor = [UIColor clearColor];
+                
+                NSDictionary * zdskDic = resultDic[@"zdsk"];
+                
+                if (zdskDic != nil && [zdskDic allKeys].count > 5) {
+                    
+                    NSDictionary * sunriseAttributes = @{@"body"    : LABEL_FONT_15_BOLD,
+                                             @"title"   : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
+                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
+                                             @"thumb"   : @[[UIImage imageNamed:@"sunsetUp"]]
+                                             };
+                    
+                    NSDictionary * sunsetAttributes = @{@"body"    : LABEL_FONT_15_BOLD,
+                                             @"title"   : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
+                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
+                                             @"thumb"   : @[[UIImage imageNamed:@"sunsetDown"]]
+                                             };
+                    
+                    cell.sunriseLabel.attributedText =[[NSString stringWithFormat:@"<title>日出时间 %@</title>", zdskDic[@"sunset_one"]] attributedStringWithStyleBook:sunriseAttributes];
+                    
+                    cell.sunsetLabel.attributedText =[[NSString stringWithFormat:@"<title>日落时间 %@</title>", zdskDic[@"sunset_two"]] attributedStringWithStyleBook:sunsetAttributes];
+                } else {
+                    
+                    cell.sunriseLabel.text = [NSString stringWithFormat:@""];
+                    cell.sunsetLabel.text = [NSString stringWithFormat:@""];
+                }
+                
+                cell.userInteractionEnabled = NO;
+                
+                return cell;
+            } else {
+                
+                static NSString * identifier = @"cell";
+                
+                UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+                
+                if (!cell) {
+                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+                }
+                
+                cell.backgroundColor = [UIColor clearColor];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                return cell;
+            }
+        }
     }
     
-    return nil;
+    static NSString * identifier = @"cell";
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
@@ -266,6 +393,61 @@ static NSInteger kSection = 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
+    
+    NSArray * lifeIndexArray = resultDic[@"lifeindex"];
+    
+    switch (indexPath.row) {
+        case 0: {
+            
+            NSArray * tempArray = resultDic[@"warn"];
+            
+            NSDictionary * zdskDic = resultDic[@"zdsk"];
+            
+            NSString * airAQI = zdskDic[@"air_aqi"];
+            
+            if (tempArray.count > 0 || airAQI.length !=0) {
+                return self.frame.size.height - 200 - 35 - 85;
+            } else {
+                return self.frame.size.height - 200 - 85;
+            }
+        }
+            break;
+        
+        case 1:
+            
+            return 200;
+            break;
+            
+        case 2:
+            
+            return 350;
+            break;
+            
+        case 3: {
+            
+            if (lifeIndexArray != nil && lifeIndexArray.count > 0) {
+                return lifeIndexArray.count / 2 * (70 + 10) + lifeIndexArray.count % 2 * (70 + 10);
+            } else {
+                return 40;
+            }
+        }
+            break;
+            
+        case 4: {
+            
+            if (lifeIndexArray != nil && lifeIndexArray.count > 0) {
+                return 40;
+            } else {
+                return 0;
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     return 0.0;
 }
@@ -368,14 +550,14 @@ static NSInteger kSection = 2;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+    if ([self.delegate respondsToSelector:@selector(cityWeatherUpdate:withScrollView:)] ) {
+        [self.delegate cityWeatherUpdate:self withScrollView:self.tableView];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    
+    NSLog(@"scrollViewDidEndDecelerating - %f", scrollView.mj_offsetY);
 }
 
 #pragma mark - Life cycle;
@@ -393,6 +575,7 @@ static NSInteger kSection = 2;
     return self;
 }
 
+#pragma mark - Network and database.
 
 - (void)setNoData:(BOOL)showNodata {
     
@@ -400,11 +583,89 @@ static NSInteger kSection = 2;
 
 - (void)loadNewData {
     
+    NSString * dateTimeStr = [self.weatherForecastModel.forcastContent JSONValue][@"time"][@"time"];
+    
+    NSDate * nowDate = [NSDate date];
+    
+    NSDateFormatter * dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateFormat = @"yyyyMMddHHmmss";
+    
+    NSDate * preUpdateDate = [dateFormatter dateFromString:dateTimeStr];
+    
+    if (dateTimeStr.length > 0 && [nowDate timeIntervalSinceDate:preUpdateDate] < 1 * 60 * 60) {
+        
+        [self.tableView.mj_header endRefreshing];
+    }
+    
+    if (!self.tableView.mj_header.isRefreshing) {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+    /*
+     *  接口地址
+     *  http://218.202.74.146:10132/product_weather/cityweather/forecast?cityid=10046&token=asdklasndglasdg&sk=false&time=true&warn=true&status=true&forecast=true&zdsk=true&cityinfo=true&lifeindex=true
+     */
+    
+    NSMutableDictionary * paramDic = [NSMutableDictionary new];
+    [paramDic setObject:@"true" forKey:@"time"];
+    [paramDic setObject:@"true" forKey:@"warn"];
+    [paramDic setObject:@"true" forKey:@"status"];
+    [paramDic setObject:@"true" forKey:@"forecast"];
+    [paramDic setObject:@"true" forKey:@"zdsk"];
+    [paramDic setObject:@"true" forKey:@"cityinfo"];
+    [paramDic setObject:@"true" forKey:@"lifeindex"];
+    
+    if (self.weatherForecastModel != nil && self.weatherForecastModel.traget_id != nil) {
+        [paramDic setObject:self.weatherForecastModel.traget_id forKey:@"cityid"];
+    } else {}
+    
+    [paramDic setObject:SHARED_APPDELEGATE.userModel.userToken forKey:@"token"];
+    
+    [HTTPTool postWitPath:@"/cityweather/forecast" params:paramDic success:^(id json) {
+        
+        NSLog(@"json %@", json);
+        
+        NSString * aStr = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        
+        self.weatherForecastModel.forcastContent = aStr;
+        
+        LKDBHelper * dbHelp = SHARED_APPDELEGATE.getDBHander;
+        [dbHelp updateToDB:self.weatherForecastModel where:nil];
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+        
+        if ([self.delegate respondsToSelector:@selector(cityWeatherUpdate:withForecastCityModel:)]) {
+            [self.delegate cityWeatherUpdate:self withForecastCityModel:self.weatherForecastModel];
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"error is %@", error);
+        [self.tableView.mj_header endRefreshing];
+    }];
+    
 }
 
 - (void)readDBData {
     
+    LKDBHelper * dbHelper = SHARED_APPDELEGATE.getDBHander;
+    
+    NSArray * array = [dbHelper search:[WeatherForecastModel class] where:[NSString stringWithFormat:@"oid = %@", self.weatherForecastModel.oid] orderBy:nil offset:0 count:2];
+    
+    self.weatherForecastModel = [array firstObject];
+    
+    [self.tableView reloadData];
 }
 
 
 @end
+
+
+
+
+
+
+
+
+
+

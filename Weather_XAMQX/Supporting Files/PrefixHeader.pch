@@ -11,12 +11,24 @@
 
 /* pch start */
 
+#import "AFNetworking.h"
+#import "HTTPTool.h"
+#import "UIImageView+SDWebImage.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+RTTint.h"
 #import "MJRefresh.h"
 #import "JSON.h"
+#import "LKDBHelper.h"
 #import "FMDB.h"
 #import "NSString+FontExtention.h"
 #import "NSString+CatchPath.h"
+#import "NSString+WPAttributedMarkup.h"
+#import "DGActivityIndicatorView.h"
+#import "AppDelegate.h"
 
+#define SHARED_APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define GOTO_FORECAST_VIEWCONTROLLER  @"goForecastViewController" 
 
 #define TTT NSLog(@"Define Macro Success!");
 
@@ -24,18 +36,28 @@
 
 #define API_Weather @""
 
+#define BATTERY_BAR_HEIGHT 20
+
+#define TITLE_LABEL_HEIGHT   44
+
 #define SCREEN_WIDTH  [UIScreen mainScreen ].bounds.size.width
 
 #define SCREEN_HEIGHT [UIScreen mainScreen ].bounds.size.height
 
 #undef    RGBA
-#define RGBA(R,G,B,A)    [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
+#define RGBA(R,G,B,A) [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
 
 #define CURRENT_TEMPERATURE_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.f]
 
 #define CURRENT_TEMPERATURE_UNIT_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.f]
 
 #define LABEL_FONT_15 [UIFont systemFontOfSize:15]
+
+#define LABEL_FONT_13 [UIFont systemFontOfSize:13]
+
+#define LABEL_FONT_15_BOLD [UIFont boldSystemFontOfSize:15]
+
+#define LABEL_FONT_18_BOLD [UIFont boldSystemFontOfSize:18]
 
 
 /* pch end */

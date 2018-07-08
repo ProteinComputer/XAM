@@ -13,7 +13,7 @@ target 'Weather_XAMQX' do
   pod 'YYModel'
   pod 'FMDB'
   pod 'LKDBHelper'
-  
+  pod 'DGActivityIndicatorView'
   # vendors end
 
 end

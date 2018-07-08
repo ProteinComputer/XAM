@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UserModel.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) UserModel * userModel;
+
+@property (nonatomic,strong) LKDBHelper * dbHelper;
+
+- (LKDBHelper *)getDBHander;
 
 @end
 

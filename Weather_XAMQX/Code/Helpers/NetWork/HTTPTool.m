@@ -7,9 +7,8 @@
 //
 
 #import "HTTPTool.h"
-#import "AFNetworking.h"
 
-static NSString * kBaseURL = @"http://192.168.3.114";
+static NSString * kBaseURL = @"http://218.202.74.146:10132/product_weather";
 //static NSString * kBaseURL = @"http://192.168.1.103";
 
 

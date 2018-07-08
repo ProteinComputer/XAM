@@ -12,4 +12,10 @@
 
 @interface WeatherViewController : UIViewController
 
+@property (nonatomic, strong) UICollectionView *    collectionView;
+
+@property (nonatomic, strong) NSMutableArray *      userCityMutableArray;
+
+@property (nonatomic, strong) UILabel *             baseTitleLabel;
+
 @end

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "CreateCityDB.h"
-//#import "WeatherForecastModel.h"
+#import "UserModel.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +17,17 @@
 
 @implementation AppDelegate
 
+#pragma mark - Getters and setters.
+
+- (LKDBHelper *)getDBHander {
+    
+    if (!_dbHelper) {
+        self.dbHelper = [LKDBHelper getUsingLKDBHelper];
+    }
+    return _dbHelper;
+}
+
+#pragma mark - Life cycle.
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -25,6 +36,10 @@
     CreateCityDB * createCitiesDB = [CreateCityDB new];
     [createCitiesDB initCitiesDatabase];
     
+    if (!self.userModel) {
+        self.userModel = [UserModel new];
+        self.userModel.userToken = @"NOTOKEN";
+    }
     
     TTT
     

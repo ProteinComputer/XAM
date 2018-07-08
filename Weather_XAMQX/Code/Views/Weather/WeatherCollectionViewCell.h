@@ -14,6 +14,7 @@
 
 @protocol WeatherCollectionViewCellDelegate <NSObject>
 
+
 - (void)cityWeatherUpdate:(WeatherCollectionViewCell *)cityWeatherCollectionViewCell withForecastCityModel:(WeatherForecastModel *)weatherForecastModel;
 
 - (void)cityWeatherUpdate:(WeatherCollectionViewCell *)cityWeatherCollectionViewCell withWarning:(NSDictionary *)warning;

@@ -40,6 +40,17 @@
 		04C4532220EF70E9004466DB /* NSString+FontExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532020EF70E9004466DB /* NSString+FontExtention.m */; };
 		04C4532420EF8661004466DB /* WeatherLiveElementsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */; };
 		04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532520EF872F004466DB /* WeatherCollectionViewCell.m */; };
+		04C4532920EFBBA6004466DB /* TemperatureCurveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532820EFBBA6004466DB /* TemperatureCurveTableViewCell.m */; };
+		04C4532D20EFBEC4004466DB /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532C20EFBEC4004466DB /* UIImage+RTTint.m */; };
+		04C4533020EFE406004466DB /* LifeIndexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4532F20EFE406004466DB /* LifeIndexTableViewCell.m */; };
+		04C4533320EFE6F4004466DB /* ZDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4533220EFE6F4004466DB /* ZDCollectionViewCell.m */; };
+		04C4533620EFF4DF004466DB /* SunSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4533520EFF4DF004466DB /* SunSetTableViewCell.m */; };
+		04C4534420EFFDDA004466DB /* WPAttributedStyleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4533A20EFFDDA004466DB /* WPAttributedStyleAction.m */; };
+		04C4534520EFFDDA004466DB /* WPHotspotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4533C20EFFDDA004466DB /* WPHotspotLabel.m */; };
+		04C4534620EFFDDA004466DB /* WPTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4533E20EFFDDA004466DB /* WPTappableLabel.m */; };
+		04C4534720EFFDDA004466DB /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4534120EFFDDA004466DB /* NSMutableString+TagReplace.m */; };
+		04C4534820EFFDDA004466DB /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4534320EFFDDA004466DB /* NSString+WPAttributedMarkup.m */; };
+		04C4534C20F0CFC8004466DB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4534B20F0CFC8004466DB /* UserModel.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +117,28 @@
 		04C4532120EF70E9004466DB /* NSString+FontExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontExtention.h"; sourceTree = "<group>"; };
 		04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLiveElementsTableViewCell.m; sourceTree = "<group>"; };
 		04C4532520EF872F004466DB /* WeatherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		04C4532720EFBBA6004466DB /* TemperatureCurveTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureCurveTableViewCell.h; sourceTree = "<group>"; };
+		04C4532820EFBBA6004466DB /* TemperatureCurveTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemperatureCurveTableViewCell.m; sourceTree = "<group>"; };
+		04C4532B20EFBEC4004466DB /* UIImage+RTTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RTTint.h"; sourceTree = "<group>"; };
+		04C4532C20EFBEC4004466DB /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RTTint.m"; sourceTree = "<group>"; };
+		04C4532E20EFE406004466DB /* LifeIndexTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeIndexTableViewCell.h; sourceTree = "<group>"; };
+		04C4532F20EFE406004466DB /* LifeIndexTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeIndexTableViewCell.m; sourceTree = "<group>"; };
+		04C4533120EFE6F4004466DB /* ZDCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDCollectionViewCell.h; sourceTree = "<group>"; };
+		04C4533220EFE6F4004466DB /* ZDCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDCollectionViewCell.m; sourceTree = "<group>"; };
+		04C4533420EFF4DF004466DB /* SunSetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SunSetTableViewCell.h; sourceTree = "<group>"; };
+		04C4533520EFF4DF004466DB /* SunSetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunSetTableViewCell.m; sourceTree = "<group>"; };
+		04C4533920EFFDDA004466DB /* WPAttributedStyleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAttributedStyleAction.h; sourceTree = "<group>"; };
+		04C4533A20EFFDDA004466DB /* WPAttributedStyleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAttributedStyleAction.m; sourceTree = "<group>"; };
+		04C4533B20EFFDDA004466DB /* WPHotspotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHotspotLabel.h; sourceTree = "<group>"; };
+		04C4533C20EFFDDA004466DB /* WPHotspotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHotspotLabel.m; sourceTree = "<group>"; };
+		04C4533D20EFFDDA004466DB /* WPTappableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTappableLabel.h; sourceTree = "<group>"; };
+		04C4533E20EFFDDA004466DB /* WPTappableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTappableLabel.m; sourceTree = "<group>"; };
+		04C4534020EFFDDA004466DB /* NSMutableString+TagReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+TagReplace.h"; sourceTree = "<group>"; };
+		04C4534120EFFDDA004466DB /* NSMutableString+TagReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+TagReplace.m"; sourceTree = "<group>"; };
+		04C4534220EFFDDA004466DB /* NSString+WPAttributedMarkup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WPAttributedMarkup.h"; sourceTree = "<group>"; };
+		04C4534320EFFDDA004466DB /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
+		04C4534A20F0CFC8004466DB /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		04C4534B20F0CFC8004466DB /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +211,7 @@
 		044665EC20EB6F8900AD3726 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04C4534920F0CFB1004466DB /* User */,
 				04C4516220EDF83A004466DB /* Weather */,
 			);
 			path = Models;
@@ -210,6 +244,7 @@
 		044665EF20EB708300AD3726 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				04C4533720EFFDDA004466DB /* CoreText */,
 				04C4518520EF484B004466DB /* SBJson */,
 			);
 			path = Vendors;
@@ -344,6 +379,14 @@
 				04C451ED20EF571A004466DB /* WeatherWarningView.m */,
 				04C4531D20EF6A81004466DB /* WeatherLiveElementsTableViewCell.h */,
 				04C4532320EF8661004466DB /* WeatherLiveElementsTableViewCell.m */,
+				04C4532720EFBBA6004466DB /* TemperatureCurveTableViewCell.h */,
+				04C4532820EFBBA6004466DB /* TemperatureCurveTableViewCell.m */,
+				04C4532E20EFE406004466DB /* LifeIndexTableViewCell.h */,
+				04C4532F20EFE406004466DB /* LifeIndexTableViewCell.m */,
+				04C4533120EFE6F4004466DB /* ZDCollectionViewCell.h */,
+				04C4533220EFE6F4004466DB /* ZDCollectionViewCell.m */,
+				04C4533420EFF4DF004466DB /* SunSetTableViewCell.h */,
+				04C4533520EFF4DF004466DB /* SunSetTableViewCell.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -378,6 +421,7 @@
 		04C4517F20EEA12C004466DB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				04C4532A20EFBEAC004466DB /* UIImage */,
 				04C4518320EEA16D004466DB /* NSString */,
 			);
 			path = Categories;
@@ -431,6 +475,57 @@
 				04C4519420EF484B004466DB /* SBJsonWriter.m */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		04C4532A20EFBEAC004466DB /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				04C4532B20EFBEC4004466DB /* UIImage+RTTint.h */,
+				04C4532C20EFBEC4004466DB /* UIImage+RTTint.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		04C4533720EFFDDA004466DB /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				04C4533820EFFDDA004466DB /* Extras */,
+				04C4533F20EFFDDA004466DB /* WPAttributedMarkup */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
+		04C4533820EFFDDA004466DB /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				04C4533920EFFDDA004466DB /* WPAttributedStyleAction.h */,
+				04C4533A20EFFDDA004466DB /* WPAttributedStyleAction.m */,
+				04C4533B20EFFDDA004466DB /* WPHotspotLabel.h */,
+				04C4533C20EFFDDA004466DB /* WPHotspotLabel.m */,
+				04C4533D20EFFDDA004466DB /* WPTappableLabel.h */,
+				04C4533E20EFFDDA004466DB /* WPTappableLabel.m */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		04C4533F20EFFDDA004466DB /* WPAttributedMarkup */ = {
+			isa = PBXGroup;
+			children = (
+				04C4534020EFFDDA004466DB /* NSMutableString+TagReplace.h */,
+				04C4534120EFFDDA004466DB /* NSMutableString+TagReplace.m */,
+				04C4534220EFFDDA004466DB /* NSString+WPAttributedMarkup.h */,
+				04C4534320EFFDDA004466DB /* NSString+WPAttributedMarkup.m */,
+			);
+			path = WPAttributedMarkup;
+			sourceTree = "<group>";
+		};
+		04C4534920F0CFB1004466DB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				04C4534A20F0CFC8004466DB /* UserModel.h */,
+				04C4534B20F0CFC8004466DB /* UserModel.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		4514A59F88D6A064EF1984FF /* Pods */ = {
@@ -565,11 +660,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C4534720EFFDDA004466DB /* NSMutableString+TagReplace.m in Sources */,
 				044665E420EB6DA600AD3726 /* main.m in Sources */,
 				04C4532220EF70E9004466DB /* NSString+FontExtention.m in Sources */,
+				04C4534420EFFDDA004466DB /* WPAttributedStyleAction.m in Sources */,
 				04C4519B20EF484B004466DB /* SBJsonWriter.m in Sources */,
 				0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */,
 				0446660320ECE19000AD3726 /* BaseViewController.m in Sources */,
+				04C4533020EFE406004466DB /* LifeIndexTableViewCell.m in Sources */,
 				04C4519620EF484B004466DB /* NSObject+SBJSON.m in Sources */,
 				04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */,
 				04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */,
@@ -578,14 +676,22 @@
 				04C4518220EEA167004466DB /* NSString+CatchPath.m in Sources */,
 				04C4519920EF484B004466DB /* SBJsonBase.m in Sources */,
 				0446660720ECE43300AD3726 /* MonitoringViewController.m in Sources */,
+				04C4533320EFE6F4004466DB /* ZDCollectionViewCell.m in Sources */,
+				04C4534620EFFDDA004466DB /* WPTappableLabel.m in Sources */,
+				04C4534820EFFDDA004466DB /* NSString+WPAttributedMarkup.m in Sources */,
 				04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */,
+				04C4534520EFFDDA004466DB /* WPHotspotLabel.m in Sources */,
 				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
 				04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */,
 				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
 				04C4519A20EF484B004466DB /* SBJsonParser.m in Sources */,
+				04C4534C20F0CFC8004466DB /* UserModel.m in Sources */,
 				04C4519820EF484B004466DB /* SBJSON.m in Sources */,
+				04C4532D20EFBEC4004466DB /* UIImage+RTTint.m in Sources */,
 				04C4532420EF8661004466DB /* WeatherLiveElementsTableViewCell.m in Sources */,
+				04C4532920EFBBA6004466DB /* TemperatureCurveTableViewCell.m in Sources */,
+				04C4533620EFF4DF004466DB /* SunSetTableViewCell.m in Sources */,
 				0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */,
 				04C4517E20EEA0DC004466DB /* CreateCityDB.m in Sources */,
 				044665F720ECDB4300AD3726 /* MainTabBarController.m in Sources */,
