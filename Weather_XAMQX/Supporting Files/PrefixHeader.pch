@@ -11,6 +11,8 @@
 
 /* pch start */
 
+#define TTT NSLog(@"Define Macro Success!");
+
 #import "AFNetworking.h"
 #import "HTTPTool.h"
 #import "UIImageView+SDWebImage.h"
@@ -30,11 +32,9 @@
 
 #define GOTO_FORECAST_VIEWCONTROLLER  @"goForecastViewController" 
 
-#define TTT NSLog(@"Define Macro Success!");
-
 #define SERVER_HOST @""
 
-#define API_Weather @""
+#define API_CITY_FORECAST @"/cityweather/forecast"
 
 #define BATTERY_BAR_HEIGHT 20
 

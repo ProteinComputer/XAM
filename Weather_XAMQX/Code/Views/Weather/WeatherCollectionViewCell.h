@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) WeatherForecastModel * weatherForecastModel;
 
+@property (nonatomic, strong) UITableView * tableView;
+
 - (void)setNoData:(BOOL)showNodata;
 
 - (void)loadNewData;

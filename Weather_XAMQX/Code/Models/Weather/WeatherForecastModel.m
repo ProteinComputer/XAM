@@ -45,7 +45,7 @@
             
             self.english_name = aCityModel.english_name;
             
-            self.traget_id = aCityModel.target_id;
+            self.target_id = aCityModel.target_id;
             
             self.short_name = aCityModel.short_name;
             

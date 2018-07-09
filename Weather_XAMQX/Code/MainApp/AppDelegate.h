@@ -10,6 +10,8 @@
 
 #import "UserModel.h"
 
+@class CityModel;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -17,6 +19,8 @@
 @property (nonatomic, strong) UserModel * userModel;
 
 @property (nonatomic,strong) LKDBHelper * dbHelper;
+
+@property (nonatomic, strong) CityModel * locationCityModel;
 
 - (LKDBHelper *)getDBHander;
 

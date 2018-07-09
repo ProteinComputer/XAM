@@ -18,8 +18,6 @@ static NSInteger kSection = 2;
 
 @interface WeatherCollectionViewCell () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView * tableView;
-
 @property (nonatomic, strong) UIView * noInfoView;
 
 @property (nonatomic, strong) UILabel * noForecastLabel;
@@ -457,7 +455,7 @@ static NSInteger kSection = 2;
     if (section != 0) return nil;
     
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 35)];
-    headerView.backgroundColor = [UIColor redColor];
+    headerView.backgroundColor = [UIColor clearColor];
     
     WeatherWarningView * warningView = [[WeatherWarningView alloc] initWithFrame:headerView.bounds];
     
@@ -615,13 +613,13 @@ static NSInteger kSection = 2;
     [paramDic setObject:@"true" forKey:@"cityinfo"];
     [paramDic setObject:@"true" forKey:@"lifeindex"];
     
-    if (self.weatherForecastModel != nil && self.weatherForecastModel.traget_id != nil) {
-        [paramDic setObject:self.weatherForecastModel.traget_id forKey:@"cityid"];
+    if (self.weatherForecastModel != nil && self.weatherForecastModel.target_id != nil) {
+        [paramDic setObject:self.weatherForecastModel.target_id forKey:@"cityid"];
     } else {}
     
     [paramDic setObject:SHARED_APPDELEGATE.userModel.userToken forKey:@"token"];
     
-    [HTTPTool postWitPath:@"/cityweather/forecast" params:paramDic success:^(id json) {
+    [HTTPTool postWitPath:API_CITY_FORECAST params:paramDic success:^(id json) {
         
         NSLog(@"json %@", json);
         

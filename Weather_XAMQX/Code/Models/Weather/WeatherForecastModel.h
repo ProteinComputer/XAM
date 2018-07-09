@@ -15,7 +15,7 @@
 
 @property (nonatomic, copy) NSString * oid;
 
-@property (nonatomic, copy) NSString * traget_id;
+@property (nonatomic, copy) NSString * target_id;
 
 @property (nonatomic, copy) NSString * name;
 
