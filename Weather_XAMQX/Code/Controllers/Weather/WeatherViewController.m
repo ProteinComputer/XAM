@@ -183,7 +183,9 @@ static NSInteger kCollectionViewCounts = 11;
 
 - (void)loadNewData:(WeatherForecastModel *)cityForecastModel {
     
-    NSString * dateTimeStr = [cityForecastModel.forcastContent JSONValue][@"time"][@"time"];
+    NSString * dateTimeStr = [cityForecastModel.forcastContent JSONValue][@"DB_Value"][@"time"][@"time"];
+    
+    NSLog(@"dateTimeStr %@", dateTimeStr);
     
     NSDate * nowDate = [NSDate date];
     
@@ -196,25 +198,25 @@ static NSInteger kCollectionViewCounts = 11;
         return;
     }
     
-    NSMutableDictionary * prarmDic = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary * parametermDic = [[NSMutableDictionary alloc] init];
     
-    [prarmDic setObject:@"true" forKey:@"time"];
-    [prarmDic setObject:@"true" forKey:@"warn"];
-    [prarmDic setObject:@"true" forKey:@"status"];
-    [prarmDic setObject:@"true" forKey:@"forecast"];
-    [prarmDic setObject:@"true" forKey:@"zdsk"];
-    [prarmDic setObject:@"true" forKey:@"cityinfo"];
-    [prarmDic setObject:@"true" forKey:@"lifeindex"];
+    [parametermDic setObject:@"true" forKey:@"time"];
+    [parametermDic setObject:@"true" forKey:@"warn"];
+    [parametermDic setObject:@"true" forKey:@"status"];
+    [parametermDic setObject:@"true" forKey:@"forecast"];
+    [parametermDic setObject:@"true" forKey:@"zdsk"];
+    [parametermDic setObject:@"true" forKey:@"cityinfo"];
+    [parametermDic setObject:@"true" forKey:@"lifeindex"];
     
     if (cityForecastModel != nil) {
-        [prarmDic setObject:cityForecastModel.target_id forKey:@"cityid"];
+        [parametermDic setObject:cityForecastModel.target_id forKey:@"cityid"];
     } else {
         NSLog(@"%s - loadNewData: logs date lost with %@", __func__, cityForecastModel.target_id);
     }
     
-    [prarmDic setObject:SHARED_APPDELEGATE.userModel.userToken forKey:@"token"];
+    [parametermDic setObject:SHARED_APPDELEGATE.userModel.userToken forKey:@"token"];
     
-    [HTTPTool postWitPath:API_CITY_FORECAST params:prarmDic success:^(id json) {
+    [HTTPTool postWitPath:API_CITY_FORECAST params:parametermDic success:^(id json) {
         
         //存储数据
         NSString * aStr = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
@@ -468,7 +470,7 @@ static NSInteger kCollectionViewCounts = 11;
     if (!_backgroundMaskView) {
         
         _backgroundMaskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        _backgroundMaskView.backgroundColor = RGBA(0, 0, 0, 0);
+        _backgroundMaskView.backgroundColor = RGBA(0, 0, 0, 0.0);
     }
     return _backgroundMaskView;
 }
@@ -491,7 +493,8 @@ static NSInteger kCollectionViewCounts = 11;
     if (!_backgroundImageView) {
         
         _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44)];
-        _backgroundImageView.image = [UIImage imageNamed:@"1080x1920.jpg"];
+        _backgroundImageView.image = [UIImage imageNamed:@"1080x1920_bg.jpg"];
+        NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"1080x1920_bg.jpg" ofType:nil]);
     }
     return _backgroundImageView;
 }
@@ -732,16 +735,3 @@ static NSInteger kCollectionViewCounts = 11;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-

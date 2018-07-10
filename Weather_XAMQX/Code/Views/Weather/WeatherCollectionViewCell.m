@@ -32,6 +32,15 @@ static NSInteger kSection = 2;
 
 #pragma mark - Getters and setters.
 
+- (WeatherForecastModel *)weatherForecastModel {
+    
+    if (!_weatherForecastModel) {
+        
+        _weatherForecastModel = [WeatherForecastModel new];
+    }
+    return _weatherForecastModel;
+}
+
 - (UITableView *)tableView {
     
     if (!_tableView) {
@@ -118,9 +127,10 @@ static NSInteger kSection = 2;
             break;
         case 1: {
             
+//            NSDictionary * resultDic = (NSDictionary *)self.weatherForecastModel.forcastContent;
             NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
             
-            NSArray * lifeIndexArray = resultDic[@"lifeindex"];
+            NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
             
             if (lifeIndexArray != nil && lifeIndexArray.count > 0) {
                 
@@ -137,6 +147,7 @@ static NSInteger kSection = 2;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+//    NSDictionary * resultDic = (NSDictionary *)self.weatherForecastModel.forcastContent;
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
     if (self.weatherForecastModel.forcastContent.length < 100) {
@@ -186,8 +197,8 @@ static NSInteger kSection = 2;
         
         cell.backgroundColor = [UIColor clearColor];
         
-        NSDictionary * zdskDic = resultDic[@"zdsk"];
-        NSDictionary * timeDic = resultDic[@"time"];
+        NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
+        NSDictionary * timeDic = resultDic[@"DB_Value"][@"time"];
         
         /* 下面这段并没有执行 ？ */
         if (zdskDic != nil && [zdskDic allKeys].count > 5) {
@@ -245,7 +256,7 @@ static NSInteger kSection = 2;
         TemperatureCurveTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         cell.backgroundColor = [UIColor clearColor];
         
-        self.forecastDataList = resultDic[@"forecast"];
+        self.forecastDataList = resultDic[@"DB_Value"][@"forecast"];
         
         cell.weatherList = self.forecastDataList;
         
@@ -260,7 +271,7 @@ static NSInteger kSection = 2;
         return cell;
     } else {
         
-        NSArray * lifeIndexArray = resultDic[@"lifeindex"];
+        NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
         
         if (lifeIndexArray != nil && lifeIndexArray.count >0) {
             
@@ -291,7 +302,7 @@ static NSInteger kSection = 2;
                 
                 cell.backgroundColor = [UIColor clearColor];
                 
-                NSDictionary * zdskDic = resultDic[@"zdsk"];
+                NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
                 
                 if (zdskDic != nil && [zdskDic allKeys].count > 5) {
                     
@@ -358,11 +369,11 @@ static NSInteger kSection = 2;
     switch (section) {
         case 0: {
             
-                NSArray * tempArray = [self.weatherForecastModel.forcastContent JSONValue][@"warn"];
+                NSArray * tempArray = [self.weatherForecastModel.forcastContent JSONValue][@"DB_Value"][@"warn"];
             
                 NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
             
-                NSDictionary * zdskDic = resultDic[@"zdsk"];
+                NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
             
                 NSString * airAQI = zdskDic[@"air_api"];
             
@@ -394,14 +405,14 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSArray * lifeIndexArray = resultDic[@"lifeindex"];
+    NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
     
     switch (indexPath.row) {
         case 0: {
             
             NSArray * tempArray = resultDic[@"warn"];
             
-            NSDictionary * zdskDic = resultDic[@"zdsk"];
+            NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
             
             NSString * airAQI = zdskDic[@"air_aqi"];
             
@@ -476,7 +487,7 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSDictionary * zdskDic = resultDic[@"zdsk"];
+    NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
     
     NSString * airAQI = zdskDic[@"air_aqi"];
     
@@ -500,7 +511,7 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSDictionary * timeDic = resultDic[@"time"];
+    NSDictionary * timeDic = resultDic[@"DB_Value"][@"time"];
     
     NSString * dateString = timeDic[@"time"];
     
@@ -553,10 +564,7 @@ static NSInteger kSection = 2;
     }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
-    NSLog(@"scrollViewDidEndDecelerating - %f", scrollView.mj_offsetY);
-}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {}
 
 #pragma mark - Life cycle;
 
@@ -581,7 +589,9 @@ static NSInteger kSection = 2;
 
 - (void)loadNewData {
     
-    NSString * dateTimeStr = [self.weatherForecastModel.forcastContent JSONValue][@"time"][@"time"];
+    NSString * dateTimeStr = [self.weatherForecastModel.forcastContent JSONValue][@"DB_Value"][@"time"][@"time"];
+    
+    NSLog(@"dateTimeStr %@", dateTimeStr);
     
     NSDate * nowDate = [NSDate date];
     
@@ -621,9 +631,7 @@ static NSInteger kSection = 2;
     
     [HTTPTool postWitPath:API_CITY_FORECAST params:paramDic success:^(id json) {
         
-        NSLog(@"json %@", json);
-        
-        NSString * aStr = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        NSString * aStr = json;
         
         self.weatherForecastModel.forcastContent = aStr;
         

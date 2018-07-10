@@ -164,11 +164,14 @@ NS_ASSUME_NONNULL_END
         return YES;
     }
     
+    
     int err = sqlite3_open([self sqlitePath], (sqlite3**)&_db );
     if(err != SQLITE_OK) {
         NSLog(@"error opening!: %d", err);
         return NO;
     }
+    
+    [self setKey:@"FDLSAFJEIOQJR34JRI4JIGR93209T489FR"];
     
     if (_maxBusyRetryTimeInterval > 0.0) {
         // set the handler
@@ -193,6 +196,8 @@ NS_ASSUME_NONNULL_END
         NSLog(@"error opening!: %d", err);
         return NO;
     }
+    
+    [self setKey:@"FDLSAFJEIOQJR34JRI4JIGR93209T489FR"];
     
     if (_maxBusyRetryTimeInterval > 0.0) {
         // set the handler

@@ -6,14 +6,27 @@ target 'Weather_XAMQX' do
   # vendors start
   
   pod 'AFNetworking', '~> 3.0'
+  
   pod 'SDWebImage', '~> 4.0'
+  
   pod 'Masonry'
+  
   pod 'MBProgressHUD', '~> 1.1.0'
+  
   pod 'MJRefresh'
+  
   pod 'YYModel'
-  pod 'FMDB'
+  
+  pod 'MJExtension'
+  
+  pod 'FMDB/SQLCipher'
+  
   pod 'LKDBHelper'
+  
   pod 'DGActivityIndicatorView'
+  
+  pod 'BaiduMapKit'
+  
   # vendors end
 
 end

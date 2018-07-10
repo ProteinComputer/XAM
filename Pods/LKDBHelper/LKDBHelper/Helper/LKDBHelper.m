@@ -141,10 +141,12 @@ static BOOL LKDBNullIsEmptyString = NO;
     return instance;
 }
 
+/* set using db start */
 - (instancetype)init
 {
-    return [self initWithDBName:@"LKDB"];
+    return [self initWithDBName:@"clovernew_20170508"];
 }
+/* set using db end */
 
 - (instancetype)initWithDBName:(NSString *)dbname
 {

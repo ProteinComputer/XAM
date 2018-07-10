@@ -259,18 +259,35 @@
                 
                 
             } else {
+                
+                if (YES) {
                     
-                CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-                
-                CGContextSetLineWidth(context, 2);
-                
-                CGContextSetLineDash(context, 0, NULL, 0);//虚线
-                
-                CGContextMoveToPoint(context, x, y + 55);
-                
-                CGContextMoveToPoint(context, nextX, nextY + 55);
-                
-                CGContextStrokePath(context);
+                    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+                    
+                    CGContextSetLineWidth(context, 2);
+                    
+                    CGContextSetLineDash(context, 0, NULL, 0);//虚线
+                    
+                    CGContextMoveToPoint(context, x, y + 55);
+                    
+                    CGContextAddLineToPoint(context, nextX, nextY + 55);
+                    
+                    CGContextStrokePath(context);
+                    
+                } else {
+                    
+                    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+                    
+                    CGContextSetLineWidth(context, 2);
+                    
+                    CGContextSetLineDash(context, 0, NULL, 0);  //画虚线
+                    
+                    CGContextMoveToPoint(context, x, y + 55);
+                    
+                    CGContextAddLineToPoint(context, nextX, nextY + 55);
+                    
+                    CGContextStrokePath(context);
+                }
             }
         }
         
@@ -312,6 +329,8 @@
                 CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
                 
                 CGContextSetLineWidth(context, 2);
+                
+                CGContextMoveToPoint(context, x, y);
                 
                 CGContextAddLineToPoint(context, nextX, nextY);
                 

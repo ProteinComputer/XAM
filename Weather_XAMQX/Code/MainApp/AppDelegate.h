@@ -10,17 +10,33 @@
 
 #import "UserModel.h"
 
-@class CityModel;
+@class CityModel, LocationModel;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *                                window;
 
-@property (nonatomic, strong) UserModel * userModel;
 
-@property (nonatomic,strong) LKDBHelper * dbHelper;
+@property (nonatomic, strong) UserModel *                               userModel;
 
-@property (nonatomic, strong) CityModel * locationCityModel;
+@property (nonatomic, strong) CityModel *                               locationCityModel;
+
+@property (nonatomic, strong) LocationModel *                           locationModel;
+
+
+@property (nonatomic,strong) LKDBHelper *                               dbHelper;
+
+@property (nonatomic, strong) NSMutableDictionary *                     scrollHeightDic;
+
+@property (nonatomic, assign) BOOL                                      CURRNONETVC;
+
+/* CoreData
+@property (nonatomic, strong, readonly) NSManagedObjectContext * managedObjectContext;
+
+@property (nonatomic, strong, readonly) NSManagedObjectModel * managedObjectModel;
+
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator * persistentStoreCoordinator;
+*/
 
 - (LKDBHelper *)getDBHander;
 

@@ -58,7 +58,7 @@ static NSString * kBaseURL = @"http://218.202.74.146:10132/product_weather";
            success:(HttpSuccessBlock)success
            failure:(HttpFailureBlock)failure {
     
-    NSString * url = [kBaseURL stringByAppendingPathComponent:path];
+    NSString * url = [BASE_URL stringByAppendingPathComponent:path];
     
     [[AFHTTPClient sharedHTTPClient] GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
@@ -81,7 +81,7 @@ static NSString * kBaseURL = @"http://218.202.74.146:10132/product_weather";
            success:(HttpSuccessBlock)success
            failure:(HttpFailureBlock)failure {
     
-    NSString * url = [kBaseURL stringByAppendingPathComponent:path];
+    NSString * url = [BASE_URL stringByAppendingPathComponent:path];
     
     [[AFHTTPClient sharedHTTPClient] POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
@@ -103,7 +103,7 @@ static NSString * kBaseURL = @"http://218.202.74.146:10132/product_weather";
                  success:(HttpSuccessBlock)success
                  failure:(HttpFailureBlock)failure {
     
-    NSString * urlString = [kBaseURL stringByAppendingPathComponent:path];
+    NSString * urlString = [BASE_URL stringByAppendingPathComponent:path];
     NSURL * url = [NSURL URLWithString:urlString];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
@@ -171,18 +171,3 @@ static NSString * kBaseURL = @"http://218.202.74.146:10132/product_weather";
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString * pid;
 
-@property (nonatomic, assign) NSInteger level;
+@property (nonatomic, assign) int level;
 
 
 @property (nonatomic, copy) NSString * name;
