@@ -21,6 +21,7 @@
 #import "MJRefresh.h"
 #import "MJExtension.h"
 #import "JSON.h"
+#import "YYModel.h"
 #import "LKDBHelper.h"
 #import "FMDB.h"
 #import "NSString+FontExtention.h"

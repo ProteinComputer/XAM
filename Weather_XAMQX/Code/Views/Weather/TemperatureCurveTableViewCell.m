@@ -204,9 +204,9 @@
         
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGFloat perValue = (CGRectGetHeight(self.frame) - 100) / (self.maxValue - self.minValue);
+    CGFloat perValue = (CGRectGetHeight(self.frame) - 110) / (self.maxValue - self.minValue);
     
-    CGFloat width = CGRectGetWidth(self.frame) / self.weatherList.count;
+    CGFloat width = CGRectGetWidth(self.frame) / (self.weatherList.count);
     
     self.textColor = [UIColor whiteColor];
     
@@ -238,7 +238,7 @@
         //高温
         NSString * hightStr = [NSString stringWithFormat:@"%@º", [infoDic valueForKey:@"highest"]];
         
-        if ([self timeZone] == 2 && i==0 ) {
+        if ([self timeZone] == 2 && i == 0 ) {
             
         } else {
             [self drawText:hightStr rect:CGRectMake(i * width, y + 30, width, 20) color:self.textColor];
@@ -300,7 +300,7 @@
         
         CGFloat low = [[infoDic valueForKey:@"lowest"] floatValue];
         
-        y = (CGRectGetHeight(self.frame) - 100) - (low - self.minValue) * perValue + 55;
+        y = (CGRectGetHeight(self.frame) - 110) - (low - self.minValue) * perValue + 55;
         
         //绘制低温曲线
         if (i + 1 < self.weatherList.count) {
@@ -336,28 +336,29 @@
                 
                 CGContextStrokePath(context);
             }
+        }
             
-            if ([yesterdayStr isEqualToString:dateStr]) {
+        if ([yesterdayStr isEqualToString:dateStr]) {
                 
-                CGContextSetFillColorWithColor(context, [RGBA(181, 181, 181, 1) CGColor]);
+            CGContextSetFillColorWithColor(context, [RGBA(181, 181, 181, 1) CGColor]);
                 
-                CGContextFillEllipseInRect(context, CGRectMake(x - 2.5, y - 3.5, 7, 7));
-            } else {
-                [self drawPoint:context rect:CGRectMake(x - 2.5, y - 2.5, 5, 5) fillColor:RGBA(24, 98, 249, 1)];
-            }
+            CGContextFillEllipseInRect(context, CGRectMake(x - 2.5, y - 3.5, 7, 7));
+        } else {
+            [self drawPoint:context rect:CGRectMake(x - 2.5, y - 2.5, 5, 5) fillColor:RGBA(24, 98, 249, 1)];
+        }
             
-            //低温
-            NSString * lowStr = [NSString stringWithFormat:@"%@º", [infoDic valueForKey:@"lowest"]];
+        //低温
+        NSString * lowStr = [NSString stringWithFormat:@"%@º", [infoDic valueForKey:@"lowest"]];
             
-            if (NO || [yesterdayStr isEqualToString:dateStr]) {
+        if (NO || [yesterdayStr isEqualToString:dateStr]) {
                 
-                [self drawText:lowStr rect:CGRectMake(i * width, y + 5, width, 20) color:RGBA(181, 181, 181, 1)];
-            } else {
+            [self drawText:lowStr rect:CGRectMake(i * width, y + 5, width, 20) color:RGBA(181, 181, 181, 1)];
+        } else {
                 
-                if ([self timeZone] == 0 || [self timeZone] == 2) {
+            if ([self timeZone] == 0 || [self timeZone] == 2) {
                     
-                    [self drawText:lowStr rect:CGRectMake(i * width, y + 5, width, 20) color:RGBA(16, 166, 246, 1)];
-                } else {
+                [self drawText:lowStr rect:CGRectMake(i * width, y + 5, width, 20) color:RGBA(16, 166, 246, 1)];
+            } else {
                     
                     [self drawText:lowStr rect:CGRectMake(i * width, y + 5, width, 20) color:self.textColor];
                 }
@@ -395,7 +396,7 @@
                 
                 
             } else {
-                [self drawText:oneCodeCN rect:CGRectMake(1 * width, oneWeatherCNStartY, width, 20) color:self.textColor];
+                [self drawText:oneCodeCN rect:CGRectMake(i * width, oneWeatherCNStartY, width, 20) color:self.textColor];
             }
             
             //夜间天气现象
@@ -426,11 +427,9 @@
             
             if (NO || [yesterdayStr isEqualToString:dateStr]) {
                 twoWeatherImage = [twoWeatherImage rt_tintedImageWithColor:[UIColor grayColor] level:1];
-            } else {
-                [twoWeatherImage drawInRect:CGRectMake((width - 30) / 2 + i * width, self.frame.size.height - 50 - 30, 30, 30)];
             }
+                [twoWeatherImage drawInRect:CGRectMake((width - 30) / 2 + i * width, self.frame.size.height - 50 - 30, 30, 30)];
         }
-    }
 }
 
 #pragma mark - Getters and setters.

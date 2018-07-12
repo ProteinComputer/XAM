@@ -18,8 +18,12 @@
  @param imageName   占位图片名称
  */
 - (void)downloadImage:(NSString *)url placeholder:(NSString * )imageName {
-    [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:imageName] options:SDWebImageLowPriority|SDWebImageRetryFailed];
     
+    if (!imageName) {
+        [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:imageName] options:SDWebImageLowPriority|SDWebImageRetryFailed];
+    } else {
+        [self sd_setImageWithURL:[NSURL URLWithString:url]];
+    }  
 }
 
 /**

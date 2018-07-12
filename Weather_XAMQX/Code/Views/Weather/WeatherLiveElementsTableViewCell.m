@@ -45,6 +45,8 @@
     [self addSubview:self.temperatureUnitLabel];
     
     [self addSubview:self.dividerLineView];
+    
+    [self initIconWithImageNameArray];
 }
 
 - (UILabel *)baseLabelWithFrame:(CGRect)aRect {
@@ -72,9 +74,9 @@
         
         NSString * imageName = self.imageNameArray[i];
         
-        [self addSubview:[self baseImageViewWithFrame:CGRectMake(10 + ((SCREEN_WIDTH - 20) / 2) * (i % 2), 110 + 5 + i / 2 * 30, 20, 30) imagePath:imageName]];
+        [self addSubview:[self baseImageViewWithFrame:CGRectMake(10 + ((int)(SCREEN_WIDTH - 20) / 2) * (i % 2) , 110 + 5 + i / 2 * 30 ,20, 20) imagePath:imageName]];
         
-        CGRect rect = CGRectMake(10 + ((SCREEN_WIDTH - 20) / 2) * (i % 2) + 25, 110 + 5 + i / 2 * 30, (SCREEN_WIDTH - 20) / 2 - 30, 20);
+        CGRect rect = CGRectMake(10 + ((int)(SCREEN_WIDTH - 20) / 2) * (i % 2) + 25 ,110 + 5 + i / 2 * 30 ,(SCREEN_WIDTH - 20) / 2 - 30, 20);
         
         switch (i) {
                 
@@ -142,7 +144,7 @@
 
 - (UILabel *)temperatureLabel {
     
-    if (_temperatureLabel) {
+    if (!_temperatureLabel) {
         
         _temperatureLabel = [self baseLabelWithFrame:CGRectMake(10, 30, SCREEN_WIDTH - 20, 70)];
         _temperatureLabel.font = CURRENT_TEMPERATURE_LABEL_FONT;
@@ -152,11 +154,11 @@
 
 - (UILabel *)temperatureUnitLabel {
     
-    if (_temperatureUnitLabel) {
+    if (!_temperatureUnitLabel) {
         
-        CGSize temperatureLabelTextSize = [self.temperatureLabel.text sizeWithAttributedFontName:CURRENT_TEMPERATURE_LABEL_FONT];
+        CGSize temperatureLabelTextSize = [@"44.4" sizeWithAttributedFontName:CURRENT_TEMPERATURE_LABEL_FONT];
         
-        _temperatureUnitLabel = [self baseLabelWithFrame:CGRectMake(10 + temperatureLabelTextSize.width, 35, SCREEN_WIDTH - 20, 30)];
+        _temperatureUnitLabel = [self baseLabelWithFrame:CGRectMake(10 + temperatureLabelTextSize.width, 35 + 5, SCREEN_WIDTH - 20, 30)];
         _temperatureUnitLabel.font = CURRENT_TEMPERATURE_UNIT_LABEL_FONT;
         _temperatureUnitLabel.text = @"°C";
     }

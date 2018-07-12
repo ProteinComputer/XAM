@@ -12,21 +12,6 @@
 
 @implementation WeatherForecastModel
 
-+ (NSString *)getPrimaryKey {
-    
-    return @"oid";
-}
-
-+ (NSString *)getTableName {
-    
-    return @"forcast";
-}
-
-+ (int)getTableVersion {
-    
-    return 20150423;
-}
-
 - (id)initWithCityModel:(CityModel *)aCityModel {
     
     if (self = [super init]) {
@@ -58,6 +43,25 @@
     }
     
     return self;
+}
+
++ (NSString *)getPrimaryKey {
+    
+    return @"oid";
+}
+
++ (NSString *)getTableName {
+    
+    return @"forcast";
+}
+
++ (int)getTableVersion {
+    
+    return 20150423;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"forcastContent = %@", self.forcastContent];
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {

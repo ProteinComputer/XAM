@@ -25,6 +25,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.frame = frame;
     if (self) {
         
         [self initUI];
@@ -61,7 +62,7 @@
     
     NSDictionary * tempDic = self.indexArray[indexPath.row];
     
-    [cell.headImageView downloadImage:tempDic[@"url"] placeholder:nil];
+    [cell.headImageView downloadImage:tempDic[@"url"] placeholder:@"warnicon_0.png"];
     
     cell.titleLabel.text = tempDic[@"type"];
     
@@ -86,7 +87,7 @@
     if (!_divideView) {
         
         _divideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0.5)];
-        _divideView.backgroundColor = [UIColor grayColor];
+        _divideView.backgroundColor = [UIColor whiteColor];
     }
     return _divideView;
 }

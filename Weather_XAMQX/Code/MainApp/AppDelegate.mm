@@ -70,6 +70,7 @@
 
 #pragma mark - Device processing.
 
+//注册设备并加载数据
 - (void)registerDevice {
     
     //http://218.202.74.146:10132/product_weather/deviceinfos/saveDeviceInfos?system=ios&device_code=12345asd6&versions=1000&baidu_id=q3r0fastw&baidu_key=asdlgnasldgn&phone_brand=sanxing
@@ -145,12 +146,17 @@
     }
     
     [parameterDic setObject:self.userModel.userToken forKey:@"token"];
+
     
     [HTTPTool postWitPath:API_CITY_FORECAST params:parameterDic success:^(id json) {
         
         //存储数据
         
-        wfModel.forcastContent = json;
+        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:nil];
+        
+        NSString * jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        wfModel.forcastContent = jsonString;
         
         [self.getDBHander updateToDB:wfModel where:nil];
         

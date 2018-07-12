@@ -127,10 +127,13 @@ static NSInteger kSection = 2;
             break;
         case 1: {
             
-//            NSDictionary * resultDic = (NSDictionary *)self.weatherForecastModel.forcastContent;
-            NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
+            NSString * jsonString = self.weatherForecastModel.forcastContent;
             
-            NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
+            NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSDictionary * resultDic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+            
+            NSArray * lifeIndexArray = resultDic[@"lifeindex"];
             
             if (lifeIndexArray != nil && lifeIndexArray.count > 0) {
                 
@@ -197,10 +200,9 @@ static NSInteger kSection = 2;
         
         cell.backgroundColor = [UIColor clearColor];
         
-        NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
-        NSDictionary * timeDic = resultDic[@"DB_Value"][@"time"];
+        NSDictionary * zdskDic = resultDic[@"zdsk"];
+        NSDictionary * timeDic = resultDic[@"time"];
         
-        /* 下面这段并没有执行 ？ */
         if (zdskDic != nil && [zdskDic allKeys].count > 5) {
             
             cell.weatherContentLabel.text = [NSString stringWithFormat:@"%@", zdskDic[@"three_status"]];
@@ -236,7 +238,7 @@ static NSInteger kSection = 2;
             UILabel*label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 30)];
             label.backgroundColor = [UIColor clearColor];
             label.textAlignment = NSTextAlignmentCenter ;
-            label.font = [UIFont systemFontOfSize:13];
+            label.font = LABEL_FONT_13;
             label.textColor = [UIColor whiteColor];
             label.text = @"暂无数据";
             [cell addSubview:label];
@@ -256,7 +258,7 @@ static NSInteger kSection = 2;
         TemperatureCurveTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         cell.backgroundColor = [UIColor clearColor];
         
-        self.forecastDataList = resultDic[@"DB_Value"][@"forecast"];
+        self.forecastDataList = resultDic[@"forecast"];
         
         cell.weatherList = self.forecastDataList;
         
@@ -271,7 +273,7 @@ static NSInteger kSection = 2;
         return cell;
     } else {
         
-        NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
+        NSArray * lifeIndexArray = resultDic[@"lifeindex"];
         
         if (lifeIndexArray != nil && lifeIndexArray.count >0) {
             
@@ -302,20 +304,18 @@ static NSInteger kSection = 2;
                 
                 cell.backgroundColor = [UIColor clearColor];
                 
-                NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
+                NSDictionary * zdskDic = resultDic[@"zdsk"];
                 
                 if (zdskDic != nil && [zdskDic allKeys].count > 5) {
                     
                     NSDictionary * sunriseAttributes = @{@"body"    : LABEL_FONT_15_BOLD,
                                              @"title"   : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
-                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
-                                             @"thumb"   : @[[UIImage imageNamed:@"sunsetUp"]]
+                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD]
                                              };
                     
                     NSDictionary * sunsetAttributes = @{@"body"    : LABEL_FONT_15_BOLD,
                                              @"title"   : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
-                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD],
-                                             @"thumb"   : @[[UIImage imageNamed:@"sunsetDown"]]
+                                             @"content" : @[[UIColor whiteColor], LABEL_FONT_15_BOLD]
                                              };
                     
                     cell.sunriseLabel.attributedText =[[NSString stringWithFormat:@"<title>日出时间 %@</title>", zdskDic[@"sunset_one"]] attributedStringWithStyleBook:sunriseAttributes];
@@ -369,11 +369,11 @@ static NSInteger kSection = 2;
     switch (section) {
         case 0: {
             
-                NSArray * tempArray = [self.weatherForecastModel.forcastContent JSONValue][@"DB_Value"][@"warn"];
+                NSArray * tempArray = [self.weatherForecastModel.forcastContent JSONValue][@"warn"];
             
                 NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
             
-                NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
+                NSDictionary * zdskDic = resultDic[@"zdsk"];
             
                 NSString * airAQI = zdskDic[@"air_api"];
             
@@ -405,14 +405,14 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSArray * lifeIndexArray = resultDic[@"DB_Value"][@"lifeindex"];
+    NSArray * lifeIndexArray = resultDic[@"lifeindex"];
     
     switch (indexPath.row) {
         case 0: {
             
             NSArray * tempArray = resultDic[@"warn"];
             
-            NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
+            NSDictionary * zdskDic = resultDic[@"zdsk"];
             
             NSString * airAQI = zdskDic[@"air_aqi"];
             
@@ -487,7 +487,7 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSDictionary * zdskDic = resultDic[@"DB_Value"][@"zdsk"];
+    NSDictionary * zdskDic = resultDic[@"zdsk"];
     
     NSString * airAQI = zdskDic[@"air_aqi"];
     
@@ -511,7 +511,7 @@ static NSInteger kSection = 2;
     
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
-    NSDictionary * timeDic = resultDic[@"DB_Value"][@"time"];
+    NSDictionary * timeDic = resultDic[@"time"];
     
     NSString * dateString = timeDic[@"time"];
     
@@ -589,9 +589,9 @@ static NSInteger kSection = 2;
 
 - (void)loadNewData {
     
-    NSString * dateTimeStr = [self.weatherForecastModel.forcastContent JSONValue][@"DB_Value"][@"time"][@"time"];
+    NSString * dateTimeStr = [self.weatherForecastModel.forcastContent JSONValue][@"time"][@"time"];
     
-    NSLog(@"dateTimeStr %@", dateTimeStr);
+    NSLog(@"--- dateTimeStr --- %@", dateTimeStr);
     
     NSDate * nowDate = [NSDate date];
     
@@ -631,9 +631,11 @@ static NSInteger kSection = 2;
     
     [HTTPTool postWitPath:API_CITY_FORECAST params:paramDic success:^(id json) {
         
-        NSString * aStr = json;
+        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:nil];
         
-        self.weatherForecastModel.forcastContent = aStr;
+        NSString * jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        self.weatherForecastModel.forcastContent = jsonString;
         
         LKDBHelper * dbHelp = SHARED_APPDELEGATE.getDBHander;
         [dbHelp updateToDB:self.weatherForecastModel where:nil];

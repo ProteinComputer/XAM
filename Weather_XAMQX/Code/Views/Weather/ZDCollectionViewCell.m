@@ -21,6 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.frame = frame;
     if (self) {
         [self initUI];
     }
@@ -44,7 +45,7 @@
 - (UILabel *)baseLabelWithFrame:(CGRect)frame {
     
     UILabel * label = [[UILabel alloc] initWithFrame:frame];
-    label.textAlignment = NSTextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentLeft;
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor whiteColor];
     label.font = LABEL_FONT_15;
@@ -65,7 +66,7 @@
 
 - (UIImageView *)headImageView {
     
-    if (_headImageView) {
+    if (!_headImageView) {
         
         _headImageView = [self baseImageViewWithFrame:CGRectMake(5, (self.frame.size.height - 40) / 2, 40, 40) imagePath:nil];
     }
@@ -77,6 +78,8 @@
     if (!_titleLabel) {
         
         _titleLabel = [self baseLabelWithFrame:CGRectMake(50, 5, self.frame.size.width - 45, 20)];
+        _titleLabel.font = LABEL_FONT_15_BOLD;
+        _titleLabel.text = @"生活指数";
     }
     return _titleLabel;
 }
@@ -85,9 +88,10 @@
     
     if (!_contentLabel) {
         
-        _contentLabel = [self baseLabelWithFrame:CGRectMake(50, 5, self.frame.size.width - 45, 20)];
+        _contentLabel = [self baseLabelWithFrame:CGRectMake(50, 25, self.frame.size.width - 45, 40)];
         _contentLabel.font = LABEL_FONT_13;
         _contentLabel.numberOfLines = 2;
+        _contentLabel.text = @"指数说明";
     }
     return _contentLabel;
 }

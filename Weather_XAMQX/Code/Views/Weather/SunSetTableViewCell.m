@@ -21,6 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.frame = frame;
     if (self) {
         
         [self initUI];
@@ -46,7 +47,7 @@
     if (!_divideView) {
         
         _divideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0.5)];
-        _divideView.backgroundColor = [UIColor grayColor];
+        _divideView.backgroundColor = [UIColor whiteColor];
     }
     return _divideView;
 }
@@ -65,10 +66,10 @@
     
     if (!_sunsetLabel) {
         
-        _sunsetLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 + 10, 10, (SCREEN_WIDTH - 20) / 2, 20)];
+        _sunsetLabel = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH) / 2 + 10, 10, (SCREEN_WIDTH - 20) / 2, 20)];
         _sunsetLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _sunriseLabel;
+    return _sunsetLabel;
 }
 
 @end

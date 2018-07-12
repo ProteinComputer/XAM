@@ -98,7 +98,7 @@
         
         _airImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 25, 25)];
         _airImageView.backgroundColor = [UIColor clearColor];
-        _airImageView.image = [UIImage imageNamed:@"sk_aqi"];
+//        _airImageView.image = [UIImage imageNamed:@"sk_aqi"];
     }
     return _airImageView;
 }

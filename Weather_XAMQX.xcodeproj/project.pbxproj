@@ -18,6 +18,7 @@
 		0446660A20ECE44100AD3726 /* WarningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446660920ECE44100AD3726 /* WarningViewController.m */; };
 		0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446660C20ECE45100AD3726 /* ForecastViewController.m */; };
 		0446661020ECE45D00AD3726 /* DecisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446660F20ECE45D00AD3726 /* DecisionViewController.m */; };
+		0479702520F64991002C3065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0479702420F64991002C3065 /* Assets.xcassets */; };
 		04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4515D20ED3CA3004466DB /* ZDNavigationController.m */; };
 		04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516020EDF524004466DB /* WeatherForecastModel.m */; };
 		04C4516520EDF911004466DB /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4516420EDF911004466DB /* CityModel.m */; };
@@ -51,7 +52,6 @@
 		04C4534820EFFDDA004466DB /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4534320EFFDDA004466DB /* NSString+WPAttributedMarkup.m */; };
 		04C4534C20F0CFC8004466DB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4534B20F0CFC8004466DB /* UserModel.m */; };
 		04C4534E20F3B56F004466DB /* clovernew_20170508.db in Resources */ = {isa = PBXBuildFile; fileRef = 04C4534D20F38E1E004466DB /* clovernew_20170508.db */; };
-		04C4535120F48CEC004466DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044665DD20EB6DA600AD3726 /* Assets.xcassets */; };
 		04C4535520F4A1D5004466DB /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535420F4A1D5004466DB /* LocationModel.m */; };
 		04C4535920F4B662004466DB /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535720F4B662004466DB /* GenericModel.m */; };
 		04C4535C20F4B6B5004466DB /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535B20F4B6B5004466DB /* HotCityModel.m */; };
@@ -64,7 +64,6 @@
 		044665D420EB6DA500AD3726 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		044665D520EB6DA500AD3726 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		044665DB20EB6DA500AD3726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		044665DD20EB6DA600AD3726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044665E020EB6DA600AD3726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044665E220EB6DA600AD3726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044665E320EB6DA600AD3726 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		0446660C20ECE45100AD3726 /* ForecastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		0446660E20ECE45D00AD3726 /* DecisionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecisionViewController.h; sourceTree = "<group>"; };
 		0446660F20ECE45D00AD3726 /* DecisionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecisionViewController.m; sourceTree = "<group>"; };
+		0479702420F64991002C3065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C4515C20ED3CA3004466DB /* ZDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDNavigationController.h; sourceTree = "<group>"; };
 		04C4515D20ED3CA3004466DB /* ZDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDNavigationController.m; sourceTree = "<group>"; };
 		04C4515F20EDF524004466DB /* WeatherForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastModel.h; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 			children = (
 				04C4518420EEA4CF004466DB /* SQL */,
 				044665E220EB6DA600AD3726 /* Info.plist */,
-				044665DD20EB6DA600AD3726 /* Assets.xcassets */,
 				0446660420ECE1FA00AD3726 /* PrefixHeader.pch */,
+				0479702420F64991002C3065 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -651,13 +651,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C4535120F48CEC004466DB /* Assets.xcassets in Resources */,
 				04C4534E20F3B56F004466DB /* clovernew_20170508.db in Resources */,
 				04C4517620EE908C004466DB /* g_region.txt in Resources */,
 				04C4517920EE9099004466DB /* g_region_a.txt in Resources */,
 				04C4517A20EE9099004466DB /* g_region.sql in Resources */,
 				044665E120EB6DA600AD3726 /* LaunchScreen.storyboard in Resources */,
 				044665DC20EB6DA500AD3726 /* Main.storyboard in Resources */,
+				0479702520F64991002C3065 /* Assets.xcassets in Resources */,
 				04C4519520EF484B004466DB /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

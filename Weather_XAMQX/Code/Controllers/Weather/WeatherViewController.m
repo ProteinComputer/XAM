@@ -120,9 +120,9 @@ static NSInteger kCollectionViewCounts = 11;
     
     self.navigationController.navigationBar.hidden = YES;
     
-    [self.backgroundImageView addSubview:self.visualEffectView];
-    
     [self.view addSubview:self.backgroundImageView];
+    
+    [self.backgroundImageView addSubview:self.visualEffectView];
     
     [self.view addSubview:self.backgroundMaskView];
     
@@ -183,9 +183,7 @@ static NSInteger kCollectionViewCounts = 11;
 
 - (void)loadNewData:(WeatherForecastModel *)cityForecastModel {
     
-    NSString * dateTimeStr = [cityForecastModel.forcastContent JSONValue][@"DB_Value"][@"time"][@"time"];
-    
-    NSLog(@"dateTimeStr %@", dateTimeStr);
+    NSString * dateTimeStr = [cityForecastModel.forcastContent JSONValue][@"time"][@"time"];
     
     NSDate * nowDate = [NSDate date];
     
@@ -348,6 +346,8 @@ static NSInteger kCollectionViewCounts = 11;
     
     NSArray * array = [dbHelper search:[WeatherForecastModel class] where:@" isLocation = \'1\'" orderBy:nil offset:0 count:1];
     
+    NSLog(@"array %@", array);
+    
     if (array.count > 0) {
         
         WeatherForecastModel * tempWFModel = [array firstObject];
@@ -493,8 +493,7 @@ static NSInteger kCollectionViewCounts = 11;
     if (!_backgroundImageView) {
         
         _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44)];
-        _backgroundImageView.image = [UIImage imageNamed:@"1080x1920_bg.jpg"];
-        NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"1080x1920_bg.jpg" ofType:nil]);
+        _backgroundImageView.image = [UIImage imageNamed:@"1080_1920_bg.jpg"];
     }
     return _backgroundImageView;
 }
@@ -520,7 +519,7 @@ static NSInteger kCollectionViewCounts = 11;
     if (!_locationImageView) {
         
         _locationImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 29, 26, 26)];
-        _locationImageView.image = [UIImage imageNamed:@"location_white"];
+        _locationImageView.image = [UIImage imageNamed:@"location_white.png"];
         _locationImageView.hidden = YES;
     }
     return _locationImageView;
@@ -629,7 +628,7 @@ static NSInteger kCollectionViewCounts = 11;
     
     LKDBHelper * dbHelper = SHARED_APPDELEGATE.getDBHander;
     
-    NSArray * tempArray = [dbHelper search:[weatherForecastModel class] where:nil orderBy:@"isLocation DESC, addDate ASC" offset:0 count:10];
+    NSArray * tempArray = [dbHelper search:[WeatherForecastModel class] where:nil orderBy:@"isLocation DESC, addDate ASC" offset:0 count:10];
     
     if (self.userCityMutableArray) {
         [self.userCityMutableArray removeAllObjects];
