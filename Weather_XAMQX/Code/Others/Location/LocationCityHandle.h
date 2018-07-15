@@ -1,5 +1,5 @@
 //
-//  CityLocationInfo.h
+//  LocationCityHandle.h
 //  Weather_XAMQX
 //
 //  Created by Jack on 2018/7/10.
@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-//@class CityModel;
 
-@interface CityLocationInfo : NSObject
+@interface LocationCityHandle : NSObject
 
-- (CityModel *)startSearchByLocation:(LocationModel *)locationModel;
++ (void)startSearchByLocation:(LocationModel *)locationModel;
 
 @end

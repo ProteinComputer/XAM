@@ -14,7 +14,8 @@
 #import "WeatherForecastModel.h"
 #import "LocationModel.h"
 #import "HotCityModel.h"
-#import "CityLocationInfo.h"
+#import "LocationCityHandle.h"
+#import "WeatherForecastLoader.h"
 
 @interface AppDelegate () <BMKGeneralDelegate, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate>
 
@@ -46,12 +47,14 @@
     
     [self saveNewCity];
     
-    [self.baiduMapMange start:BAIDU_MAPKIT_KEY generalDelegate:nil];
+    if ([self.baiduMapMange start:BAIDU_MAPKIT_KEY generalDelegate:self]) {
+        NSLog(@"BaiduMapManger initialized!");
+    } else {
+        NSLog(@"BaiduMapManager failed to initiate!");
+    };
     
     [self.baiduLocationService startUserLocationService];
     
-    
-
     return YES;
 }
 
@@ -101,7 +104,7 @@
         NSArray * array = [self.getDBHander search:[WeatherForecastModel class] where:@"" orderBy:nil offset:0 count:9];
         
         for (WeatherForecastModel * wfModel in array) {
-            [self loadNewData:wfModel];
+            [WeatherForecastLoader weatherForcastLoader:wfModel];
         }
         
     } failure:^(NSError *error) {
@@ -126,44 +129,6 @@
 }
 
 #pragma mark - Data processing.
-
-- (void)loadNewData:(WeatherForecastModel *)wfModel {
-    
-    NSMutableDictionary * parameterDic = [[NSMutableDictionary alloc] init];
-    [parameterDic setObject:@"true" forKey:@"time"];
-    [parameterDic setObject:@"true" forKey:@"warn"];
-    [parameterDic setObject:@"true" forKey:@"status"];
-    [parameterDic setObject:@"true" forKey:@"forecast"];
-    [parameterDic setObject:@"true" forKey:@"zdsk"];
-    [parameterDic setObject:@"true" forKey:@"cityinfo"];
-    [parameterDic setObject:@"true" forKey:@"lifeindex"];
-    
-    if (wfModel != nil && wfModel.target_id != nil) {
-        
-        [parameterDic setObject:wfModel.target_id forKey:@"cityid"];
-    } else {
-        NSLog(@"AppDelegate - loadNewData: logs data lost with %@", wfModel.target_id);
-    }
-    
-    [parameterDic setObject:self.userModel.userToken forKey:@"token"];
-
-    
-    [HTTPTool postWitPath:API_CITY_FORECAST params:parameterDic success:^(id json) {
-        
-        //存储数据
-        
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:nil];
-        
-        NSString * jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        
-        wfModel.forcastContent = jsonString;
-        
-        [self.getDBHander updateToDB:wfModel where:nil];
-        
-    } failure:^(NSError * error) {
-        NSLog(@"Error is %@", error);
-    }];
-}
 
 - (void)saveNewCity {
     
@@ -205,9 +170,9 @@
             cityModel.target_nid = cityCols[12];
             cityModel.target_sid = cityCols[13];
             cityModel.target_real = cityCols[14];
-            cityModel.shortName_pinyin = cityCols[15];
-            cityModel.indexChar = cityCols[16];
-            cityModel.shortName_ShortPinyin = cityCols[17];
+//            cityModel.shortName_pinyin = cityCols[15];
+//            cityModel.indexChar = cityCols[16];
+//            cityModel.shortName_ShortPinyin = cityCols[17];
             cityModel.full_name = cityFullNameArray[index];
             
             [dbHelper insertToDB:cityModel];
@@ -393,8 +358,10 @@
         self.locationModel.location_streetName = result.addressDetail.streetName;
         self.locationModel.location_streetNumber = result.addressDetail.streetNumber;
         
-        CityLocationInfo * cityLocationInfo = [CityLocationInfo new];
-        [cityLocationInfo startSearchByLocation:self.locationModel];
+        NSLog(@"ReverseGeoCodeResult %@ %@ %@", result.addressDetail.province, result.addressDetail.city, result.addressDetail.district);
+        
+        [LocationCityHandle startSearchByLocation:self.locationModel];
+        
         [self addLocationCity];
     } else {}
 }
@@ -407,13 +374,13 @@
         
         _baiduMapMange = [BMKMapManager new];
         
-        BOOL result =  [_baiduMapMange start:BAIDU_MAPKIT_KEY generalDelegate:nil];
-        
-        if (result) {
-            NSLog(@"BaiduMapKit initialized success!");
-        } else {
-            NSLog(@"BaiduMapKit initialized failed!");
-        }
+//        BOOL result =  [_baiduMapMange start:BAIDU_MAPKIT_KEY generalDelegate:self];
+//
+//        if (result) {
+//            NSLog(@"BaiduMapKit initialized success!");
+//        } else {
+//            NSLog(@"BaiduMapKit initialized failed!");
+//        }
     }
     return _baiduMapMange;
 }
@@ -515,12 +482,12 @@
             [self.getDBHander deleteToDB:[tempArray firstObject]];
             [self.getDBHander insertToDB:weatherForecastModel];
             
-            [self loadNewData:weatherForecastModel];
+            [WeatherForecastLoader weatherForcastLoader:weatherForecastModel];
         }
     } else {
         
         [self.getDBHander insertToDB:weatherForecastModel];
-        [self loadNewData:weatherForecastModel];
+        [WeatherForecastLoader weatherForcastLoader:weatherForecastModel];
     }
     
     return weatherForecastModel;

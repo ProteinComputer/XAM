@@ -150,7 +150,6 @@ static NSInteger kSection = 2;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    NSDictionary * resultDic = (NSDictionary *)self.weatherForecastModel.forcastContent;
     NSDictionary * resultDic = [self.weatherForecastModel.forcastContent JSONValue];
     
     if (self.weatherForecastModel.forcastContent.length < 100) {

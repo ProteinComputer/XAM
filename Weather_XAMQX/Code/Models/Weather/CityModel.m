@@ -17,18 +17,14 @@
     return @"oid";
 }
 
-+ (NSString *)getTabelName {
++ (NSString *)getTableName {
     
-    return @"g_region_new";
+    return @"g_region";
 }
 
 + (int)getTableVersion {
     
-    return 20170508;
-}
-
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    
+    return 20140521;
 }
 
 @end

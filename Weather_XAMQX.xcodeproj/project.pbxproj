@@ -55,7 +55,8 @@
 		04C4535520F4A1D5004466DB /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535420F4A1D5004466DB /* LocationModel.m */; };
 		04C4535920F4B662004466DB /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535720F4B662004466DB /* GenericModel.m */; };
 		04C4535C20F4B6B5004466DB /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535B20F4B6B5004466DB /* HotCityModel.m */; };
-		04C4536020F4F5D8004466DB /* CityLocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535F20F4F5D8004466DB /* CityLocationInfo.m */; };
+		04C4536020F4F5D8004466DB /* LocationCityHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535F20F4F5D8004466DB /* LocationCityHandle.m */; };
+		04E0A1FE20FADFB10076EDD2 /* WeatherForecastLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A1FD20FADFB10076EDD2 /* WeatherForecastLoader.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -151,8 +152,10 @@
 		04C4535820F4B662004466DB /* GenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericModel.h; sourceTree = "<group>"; };
 		04C4535A20F4B6B5004466DB /* HotCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotCityModel.h; sourceTree = "<group>"; };
 		04C4535B20F4B6B5004466DB /* HotCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotCityModel.m; sourceTree = "<group>"; };
-		04C4535E20F4F5D8004466DB /* CityLocationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityLocationInfo.h; sourceTree = "<group>"; };
-		04C4535F20F4F5D8004466DB /* CityLocationInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityLocationInfo.m; sourceTree = "<group>"; };
+		04C4535E20F4F5D8004466DB /* LocationCityHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationCityHandle.h; sourceTree = "<group>"; };
+		04C4535F20F4F5D8004466DB /* LocationCityHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCityHandle.m; sourceTree = "<group>"; };
+		04E0A1FC20FADFB10076EDD2 /* WeatherForecastLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastLoader.h; sourceTree = "<group>"; };
+		04E0A1FD20FADFB10076EDD2 /* WeatherForecastLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastLoader.m; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 			children = (
 				04C4517C20EEA0DC004466DB /* CreateCityDB.h */,
 				04C4517D20EEA0DC004466DB /* CreateCityDB.m */,
+				04E0A1FC20FADFB10076EDD2 /* WeatherForecastLoader.h */,
+				04E0A1FD20FADFB10076EDD2 /* WeatherForecastLoader.m */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -569,8 +574,8 @@
 		04C4535D20F4F5B9004466DB /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				04C4535E20F4F5D8004466DB /* CityLocationInfo.h */,
-				04C4535F20F4F5D8004466DB /* CityLocationInfo.m */,
+				04C4535E20F4F5D8004466DB /* LocationCityHandle.h */,
+				04C4535F20F4F5D8004466DB /* LocationCityHandle.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -734,12 +739,13 @@
 				04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */,
 				04C4535520F4A1D5004466DB /* LocationModel.m in Sources */,
 				04C4534520EFFDDA004466DB /* WPHotspotLabel.m in Sources */,
+				04E0A1FE20FADFB10076EDD2 /* WeatherForecastLoader.m in Sources */,
 				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
 				04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */,
 				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
 				04C4519A20EF484B004466DB /* SBJsonParser.m in Sources */,
-				04C4536020F4F5D8004466DB /* CityLocationInfo.m in Sources */,
+				04C4536020F4F5D8004466DB /* LocationCityHandle.m in Sources */,
 				04C4534C20F0CFC8004466DB /* UserModel.m in Sources */,
 				04C4519820EF484B004466DB /* SBJSON.m in Sources */,
 				04C4532D20EFBEC4004466DB /* UIImage+RTTint.m in Sources */,

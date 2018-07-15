@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString * pid;
 
-@property (nonatomic, assign) int level;
+@property (nonatomic, assign) NSInteger level;
 
 
 @property (nonatomic, copy) NSString * name;
@@ -46,12 +46,5 @@
 @property (nonatomic, copy) NSString * target_sid;
 
 @property (nonatomic, copy) NSString * target_real;
-
-
-@property (nonatomic, copy) NSString * shortName_pinyin;
-
-@property (nonatomic, copy) NSString * shortName_ShortPinyin;
-
-@property (nonatomic, copy) NSString * indexChar;
 
 @end

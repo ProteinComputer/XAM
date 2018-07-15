@@ -51,7 +51,7 @@
 
 #define CACHE_PATH [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES) lastObject]
 
-#define BAIDU_MAPKIT_KEY @"VpZSp7LIDIHPts7KpQ9gNabRb31L3IkD"
+#define BAIDU_MAPKIT_KEY @"GFgIPQeDnH9nmjpFjDhu0blrzb9rDlv6"
 
 #define DATABASE_FOLDER @"db"
 

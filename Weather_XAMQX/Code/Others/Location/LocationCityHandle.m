@@ -1,32 +1,35 @@
 //
-//  CityLocationInfo.m
+//  LocationCityHandle.m
 //  Weather_XAMQX
 //
 //  Created by Jack on 2018/7/10.
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
 
-#import "CityLocationInfo.h"
+#import "LocationCityHandle.h"
 
 #import "CityModel.h"
 #import "LocationModel.h"
 
-@implementation CityLocationInfo
+@implementation LocationCityHandle
 
-- (instancetype)init {
++ (instancetype)sharedCityLocationInfo {
     
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+    static LocationCityHandle * lcHandle = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        lcHandle = [LocationCityHandle new];
+    });
+    return lcHandle;
 }
 
-- (CityModel *)startSearchByLocation:(LocationModel *)locationModel {
++ (void)startSearchByLocation:(LocationModel *)locationModel {
     
     CityModel * queriedCityModel = [CityModel new];
     
-    LKDBHelper * dbHelper = [LKDBHelper getUsingLKDBHelper];
+//    LKDBHelper * dbHelper = [LKDBHelper getUsingLKDBHelper];
+     LKDBHelper * dbHelper = SHARED_APPDELEGATE.getDBHander;
     
     NSArray * tempArray = [dbHelper search:[CityModel class] where:@"level = 1" orderBy:nil offset:0 count:40];
     
@@ -60,16 +63,30 @@
         }
     }
     
+    //区县
+    sqlStr = [NSString stringWithFormat:@"pid = %@ and level = 3", queriedCityModel.oid];
+    
+    tempArray = [dbHelper search:[CityModel class] where:sqlStr orderBy:nil offset:0 count:300];
+    
+    for (CityModel * cityModel in tempArray) {
+        
+        if ([cityModel.full_name rangeOfString:locationModel.location_city].length > 0) {
+            
+            if ([locationModel.location_district isEqualToString:cityModel.name]) {
+                
+                queriedCityModel = cityModel;
+                break;
+            } else {
+                if ([cityModel.full_name rangeOfString:locationModel.location_city].length > 0) {
+                    
+                    queriedCityModel = cityModel;
+                }
+            }
+        }
+    }
+    
     SHARED_APPDELEGATE.locationCityModel = queriedCityModel;
     
-    return queriedCityModel;
 }
 
 @end
-
-
-
-
-
-
-

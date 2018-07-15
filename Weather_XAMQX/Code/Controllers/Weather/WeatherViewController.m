@@ -371,7 +371,7 @@ static NSInteger kCollectionViewCounts = 11;
     return UIStatusBarStyleLightContent;
 }
 
-- (void)gotoCityManager:(UIButton *)sender {
+- (void)addCityManager:(UIButton *)sender {
     
     NSLog(@"gotoCityManager action!");
 }
@@ -460,7 +460,7 @@ static NSInteger kCollectionViewCounts = 11;
         _addCityButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_addCityButton setFrame:CGRectMake(SCREEN_WIDTH - 34 - 5, 5 + BATTERY_BAR_HEIGHT, 34, 34)];
         [_addCityButton setBackgroundImage:[UIImage imageNamed:@"cityManage.png"] forState:UIControlStateNormal];
-        [_addCityButton addTarget:self action:@selector(gotoCityManager:) forControlEvents:UIControlEventTouchUpInside];
+        [_addCityButton addTarget:self action:@selector(addCityManager:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addCityButton;
 }
