@@ -13,6 +13,8 @@ target 'Weather_XAMQX' do
   
   pod 'MBProgressHUD', '~> 1.1.0'
   
+  pod 'SVProgressHUD'
+  
   pod 'MJRefresh'
   
   pod 'YYModel'

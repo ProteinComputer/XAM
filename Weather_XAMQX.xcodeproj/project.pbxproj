@@ -57,6 +57,20 @@
 		04C4535C20F4B6B5004466DB /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535B20F4B6B5004466DB /* HotCityModel.m */; };
 		04C4536020F4F5D8004466DB /* LocationCityHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C4535F20F4F5D8004466DB /* LocationCityHandle.m */; };
 		04E0A1FE20FADFB10076EDD2 /* WeatherForecastLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A1FD20FADFB10076EDD2 /* WeatherForecastLoader.m */; };
+		04E0A20120FB4F800076EDD2 /* CustomBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A20020FB4F800076EDD2 /* CustomBaseViewController.m */; };
+		04E0A20420FC7C620076EDD2 /* CityManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A20320FC7C620076EDD2 /* CityManagerViewController.m */; };
+		04E0A20820FC82850076EDD2 /* UIColor+RGBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A20620FC82850076EDD2 /* UIColor+RGBColor.m */; };
+		04E0A20B20FC8CB70076EDD2 /* CityManagerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A20A20FC8CB70076EDD2 /* CityManagerTableViewCell.m */; };
+		04E0A20F20FC96C90076EDD2 /* GCDiscreetNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A20E20FC96C90076EDD2 /* GCDiscreetNotificationView.m */; };
+		04E0A21220FC9ADE0076EDD2 /* CityListManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A21120FC9ADE0076EDD2 /* CityListManagerViewController.m */; };
+		04E0A21520FCA0D30076EDD2 /* AddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A21420FCA0D30076EDD2 /* AddCityViewController.m */; };
+		04E0A21820FCA4910076EDD2 /* LocationServiceHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A21720FCA4910076EDD2 /* LocationServiceHandle.m */; };
+		04E0A21B20FCE3C30076EDD2 /* HotCityCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A21A20FCE3C30076EDD2 /* HotCityCollectionView.m */; };
+		04E0A21E20FCE6C80076EDD2 /* HotCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A21D20FCE6C80076EDD2 /* HotCityCollectionViewCell.m */; };
+		04E0A22120FD01D10076EDD2 /* CityListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22020FD01D10076EDD2 /* CityListTableViewCell.m */; };
+		04E0A22720FE30E90076EDD2 /* WeatherLiveElementsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22620FE30E90076EDD2 /* WeatherLiveElementsModel.m */; };
+		04E0A22A20FE319A0076EDD2 /* CurrentWeatherForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */; };
+		04E0A22D20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22C20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +170,34 @@
 		04C4535F20F4F5D8004466DB /* LocationCityHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCityHandle.m; sourceTree = "<group>"; };
 		04E0A1FC20FADFB10076EDD2 /* WeatherForecastLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastLoader.h; sourceTree = "<group>"; };
 		04E0A1FD20FADFB10076EDD2 /* WeatherForecastLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastLoader.m; sourceTree = "<group>"; };
+		04E0A1FF20FB4F800076EDD2 /* CustomBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBaseViewController.h; sourceTree = "<group>"; };
+		04E0A20020FB4F800076EDD2 /* CustomBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBaseViewController.m; sourceTree = "<group>"; };
+		04E0A20220FC7C620076EDD2 /* CityManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityManagerViewController.h; sourceTree = "<group>"; };
+		04E0A20320FC7C620076EDD2 /* CityManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityManagerViewController.m; sourceTree = "<group>"; };
+		04E0A20620FC82850076EDD2 /* UIColor+RGBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBColor.m"; sourceTree = "<group>"; };
+		04E0A20720FC82850076EDD2 /* UIColor+RGBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBColor.h"; sourceTree = "<group>"; };
+		04E0A20920FC8CB70076EDD2 /* CityManagerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityManagerTableViewCell.h; sourceTree = "<group>"; };
+		04E0A20A20FC8CB70076EDD2 /* CityManagerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityManagerTableViewCell.m; sourceTree = "<group>"; };
+		04E0A20D20FC96C90076EDD2 /* GCDiscreetNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDiscreetNotificationView.h; sourceTree = "<group>"; };
+		04E0A20E20FC96C90076EDD2 /* GCDiscreetNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDiscreetNotificationView.m; sourceTree = "<group>"; };
+		04E0A21020FC9ADE0076EDD2 /* CityListManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityListManagerViewController.h; sourceTree = "<group>"; };
+		04E0A21120FC9ADE0076EDD2 /* CityListManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityListManagerViewController.m; sourceTree = "<group>"; };
+		04E0A21320FCA0D30076EDD2 /* AddCityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCityViewController.h; sourceTree = "<group>"; };
+		04E0A21420FCA0D30076EDD2 /* AddCityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCityViewController.m; sourceTree = "<group>"; };
+		04E0A21620FCA4910076EDD2 /* LocationServiceHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServiceHandle.h; sourceTree = "<group>"; };
+		04E0A21720FCA4910076EDD2 /* LocationServiceHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServiceHandle.m; sourceTree = "<group>"; };
+		04E0A21920FCE3C30076EDD2 /* HotCityCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotCityCollectionView.h; sourceTree = "<group>"; };
+		04E0A21A20FCE3C30076EDD2 /* HotCityCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotCityCollectionView.m; sourceTree = "<group>"; };
+		04E0A21C20FCE6C80076EDD2 /* HotCityCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotCityCollectionViewCell.h; sourceTree = "<group>"; };
+		04E0A21D20FCE6C80076EDD2 /* HotCityCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotCityCollectionViewCell.m; sourceTree = "<group>"; };
+		04E0A21F20FD01D10076EDD2 /* CityListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityListTableViewCell.h; sourceTree = "<group>"; };
+		04E0A22020FD01D10076EDD2 /* CityListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityListTableViewCell.m; sourceTree = "<group>"; };
+		04E0A22520FE30E90076EDD2 /* WeatherLiveElementsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherLiveElementsModel.h; sourceTree = "<group>"; };
+		04E0A22620FE30E90076EDD2 /* WeatherLiveElementsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherLiveElementsModel.m; sourceTree = "<group>"; };
+		04E0A22820FE319A0076EDD2 /* CurrentWeatherForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentWeatherForecastModel.h; sourceTree = "<group>"; };
+		04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentWeatherForecastModel.m; sourceTree = "<group>"; };
+		04E0A22B20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCityWeatherForecastTableViewCell.h; sourceTree = "<group>"; };
+		04E0A22C20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCityWeatherForecastTableViewCell.m; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +305,7 @@
 		044665EF20EB708300AD3726 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				04E0A20C20FC96C90076EDD2 /* GCDiscreetNotificationView */,
 				04C4533720EFFDDA004466DB /* CoreText */,
 				04C4518520EF484B004466DB /* SBJson */,
 			);
@@ -314,6 +357,14 @@
 				044665FA20ECDB8800AD3726 /* WeatherViewController.m */,
 				04C4515C20ED3CA3004466DB /* ZDNavigationController.h */,
 				04C4515D20ED3CA3004466DB /* ZDNavigationController.m */,
+				04E0A21020FC9ADE0076EDD2 /* CityListManagerViewController.h */,
+				04E0A21120FC9ADE0076EDD2 /* CityListManagerViewController.m */,
+				04E0A21320FCA0D30076EDD2 /* AddCityViewController.h */,
+				04E0A21420FCA0D30076EDD2 /* AddCityViewController.m */,
+				04E0A20220FC7C620076EDD2 /* CityManagerViewController.h */,
+				04E0A20320FC7C620076EDD2 /* CityManagerViewController.m */,
+				04E0A1FF20FB4F800076EDD2 /* CustomBaseViewController.h */,
+				04E0A20020FB4F800076EDD2 /* CustomBaseViewController.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -372,6 +423,10 @@
 				04C4516420EDF911004466DB /* CityModel.m */,
 				04C4535A20F4B6B5004466DB /* HotCityModel.h */,
 				04C4535B20F4B6B5004466DB /* HotCityModel.m */,
+				04E0A22520FE30E90076EDD2 /* WeatherLiveElementsModel.h */,
+				04E0A22620FE30E90076EDD2 /* WeatherLiveElementsModel.m */,
+				04E0A22820FE319A0076EDD2 /* CurrentWeatherForecastModel.h */,
+				04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -409,6 +464,16 @@
 				04C4533220EFE6F4004466DB /* ZDCollectionViewCell.m */,
 				04C4533420EFF4DF004466DB /* SunSetTableViewCell.h */,
 				04C4533520EFF4DF004466DB /* SunSetTableViewCell.m */,
+				04E0A20920FC8CB70076EDD2 /* CityManagerTableViewCell.h */,
+				04E0A20A20FC8CB70076EDD2 /* CityManagerTableViewCell.m */,
+				04E0A21920FCE3C30076EDD2 /* HotCityCollectionView.h */,
+				04E0A21A20FCE3C30076EDD2 /* HotCityCollectionView.m */,
+				04E0A21C20FCE6C80076EDD2 /* HotCityCollectionViewCell.h */,
+				04E0A21D20FCE6C80076EDD2 /* HotCityCollectionViewCell.m */,
+				04E0A21F20FD01D10076EDD2 /* CityListTableViewCell.h */,
+				04E0A22020FD01D10076EDD2 /* CityListTableViewCell.m */,
+				04E0A22B20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.h */,
+				04E0A22C20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -445,6 +510,7 @@
 		04C4517F20EEA12C004466DB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				04E0A20520FC82770076EDD2 /* UIColor */,
 				04C4532A20EFBEAC004466DB /* UIImage */,
 				04C4518320EEA16D004466DB /* NSString */,
 			);
@@ -576,8 +642,28 @@
 			children = (
 				04C4535E20F4F5D8004466DB /* LocationCityHandle.h */,
 				04C4535F20F4F5D8004466DB /* LocationCityHandle.m */,
+				04E0A21620FCA4910076EDD2 /* LocationServiceHandle.h */,
+				04E0A21720FCA4910076EDD2 /* LocationServiceHandle.m */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		04E0A20520FC82770076EDD2 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				04E0A20720FC82850076EDD2 /* UIColor+RGBColor.h */,
+				04E0A20620FC82850076EDD2 /* UIColor+RGBColor.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		04E0A20C20FC96C90076EDD2 /* GCDiscreetNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				04E0A20D20FC96C90076EDD2 /* GCDiscreetNotificationView.h */,
+				04E0A20E20FC96C90076EDD2 /* GCDiscreetNotificationView.m */,
+			);
+			path = GCDiscreetNotificationView;
 			sourceTree = "<group>";
 		};
 		4514A59F88D6A064EF1984FF /* Pods */ = {
@@ -697,11 +783,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX-resources.sh",
 				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -716,36 +804,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C4534720EFFDDA004466DB /* NSMutableString+TagReplace.m in Sources */,
+				04E0A20420FC7C620076EDD2 /* CityManagerViewController.m in Sources */,
 				044665E420EB6DA600AD3726 /* main.m in Sources */,
+				04E0A21520FCA0D30076EDD2 /* AddCityViewController.m in Sources */,
 				04C4532220EF70E9004466DB /* NSString+FontExtention.m in Sources */,
 				04C4534420EFFDDA004466DB /* WPAttributedStyleAction.m in Sources */,
 				04C4519B20EF484B004466DB /* SBJsonWriter.m in Sources */,
 				0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */,
 				0446660320ECE19000AD3726 /* BaseViewController.m in Sources */,
+				04E0A20B20FC8CB70076EDD2 /* CityManagerTableViewCell.m in Sources */,
 				04C4533020EFE406004466DB /* LifeIndexTableViewCell.m in Sources */,
 				04C4535C20F4B6B5004466DB /* HotCityModel.m in Sources */,
 				04C4519620EF484B004466DB /* NSObject+SBJSON.m in Sources */,
 				04C4515E20ED3CA3004466DB /* ZDNavigationController.m in Sources */,
+				04E0A20120FB4F800076EDD2 /* CustomBaseViewController.m in Sources */,
 				04C4517420EE8C51004466DB /* UIImageView+SDWebImage.m in Sources */,
 				04C4519720EF484B004466DB /* NSString+SBJSON.m in Sources */,
 				04C4516520EDF911004466DB /* CityModel.m in Sources */,
+				04E0A20820FC82850076EDD2 /* UIColor+RGBColor.m in Sources */,
 				04C4518220EEA167004466DB /* NSString+CatchPath.m in Sources */,
 				04C4519920EF484B004466DB /* SBJsonBase.m in Sources */,
+				04E0A21E20FCE6C80076EDD2 /* HotCityCollectionViewCell.m in Sources */,
 				0446660720ECE43300AD3726 /* MonitoringViewController.m in Sources */,
 				04C4533320EFE6F4004466DB /* ZDCollectionViewCell.m in Sources */,
+				04E0A22D20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m in Sources */,
 				04C4534620EFFDDA004466DB /* WPTappableLabel.m in Sources */,
 				04C4534820EFFDDA004466DB /* NSString+WPAttributedMarkup.m in Sources */,
+				04E0A22120FD01D10076EDD2 /* CityListTableViewCell.m in Sources */,
 				04C4535920F4B662004466DB /* GenericModel.m in Sources */,
+				04E0A21220FC9ADE0076EDD2 /* CityListManagerViewController.m in Sources */,
 				04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */,
 				04C4535520F4A1D5004466DB /* LocationModel.m in Sources */,
+				04E0A20F20FC96C90076EDD2 /* GCDiscreetNotificationView.m in Sources */,
+				04E0A21B20FCE3C30076EDD2 /* HotCityCollectionView.m in Sources */,
 				04C4534520EFFDDA004466DB /* WPHotspotLabel.m in Sources */,
 				04E0A1FE20FADFB10076EDD2 /* WeatherForecastLoader.m in Sources */,
+				04E0A21820FCA4910076EDD2 /* LocationServiceHandle.m in Sources */,
 				04C4516120EDF524004466DB /* WeatherForecastModel.m in Sources */,
 				044665FB20ECDB8800AD3726 /* WeatherViewController.m in Sources */,
 				04C4532620EF872F004466DB /* WeatherCollectionViewCell.m in Sources */,
 				04C4517120EE8C1E004466DB /* HTTPTool.m in Sources */,
+				04E0A22720FE30E90076EDD2 /* WeatherLiveElementsModel.m in Sources */,
 				04C4519A20EF484B004466DB /* SBJsonParser.m in Sources */,
 				04C4536020F4F5D8004466DB /* LocationCityHandle.m in Sources */,
+				04E0A22A20FE319A0076EDD2 /* CurrentWeatherForecastModel.m in Sources */,
 				04C4534C20F0CFC8004466DB /* UserModel.m in Sources */,
 				04C4519820EF484B004466DB /* SBJSON.m in Sources */,
 				04C4532D20EFBEC4004466DB /* UIImage+RTTint.m in Sources */,

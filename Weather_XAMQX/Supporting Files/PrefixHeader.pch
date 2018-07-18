@@ -27,6 +27,11 @@
 #import "NSString+FontExtention.h"
 #import "NSString+CatchPath.h"
 #import "NSString+WPAttributedMarkup.h"
+#import "UIColor+RGBColor.h"
+#import "GCDiscreetNotificationView.h"
+#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
+
 #import "DGActivityIndicatorView.h"
 #import "AppDelegate.h"
 
@@ -78,7 +83,19 @@
 #undef    RGBA
 #define RGBA(R,G,B,A) [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
 
+#define THEMECOLOR [UIColor colorWithRed:245/255.0 green:248/255.0 blue:251/255.0 alpha:1.0]
+
+#define LABEL_TEXTCOLOR_DARKBLACK [UIColor colorWithRed:65/255.0 green:65/255.0 blue:65/255.0 alpha:1.0]
+
+#define DIVIDER_BACKGROUND_COLOR [UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1.0]
+
+#define CONTENTVIEW_BACKGROUND_COLOR [UIColor colorWithRed:245/255.0 green:248/255.0 blue:251/255.0 alpha:1.0]
+
+#define CELL_SELECTED_COLOR [UIColor colorWithRed:0/255.0 green:147/255.0 blue:247/255.0 alpha:0.5]
+
 #define CURRENT_TEMPERATURE_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.f]
+
+#define CURRENT_TEMPERATURE_LABEL_FONT_SIZE25 [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25.f]
 
 #define CURRENT_TEMPERATURE_UNIT_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.f]
 
@@ -111,5 +128,19 @@ fprintf(stderr, "-------\n");                                               \
 
 
 /* pch end */
+
+/*
+ 
+#pragma mark - Life cycle.
+ 
+#pragma mark - UITabeleViewDelegate.
+ 
+#pragma mark - UITabelViewDataSource.
+ 
+#pragma mark - Handlers.
+ 
+#pragma Getters and setters.
+ 
+ */
 
 #endif /* PrefixHeader_pch */

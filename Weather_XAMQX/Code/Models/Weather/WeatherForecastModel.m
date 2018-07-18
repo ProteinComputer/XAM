@@ -1,7 +1,7 @@
 //
 //  城市天气预报模型
 //
-//  CityModel.m
+//  WeatherForecastModel.m
 //  Weather_XAMQX
 //
 //  Created by Jack on 2018/7/5.

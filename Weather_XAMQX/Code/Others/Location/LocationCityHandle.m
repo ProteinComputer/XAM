@@ -24,7 +24,7 @@
     return lcHandle;
 }
 
-+ (void)startSearchByLocation:(LocationModel *)locationModel {
++ (CityModel *)startSearchByLocation:(LocationModel *)locationModel {
     
     CityModel * queriedCityModel = [CityModel new];
     
@@ -87,6 +87,7 @@
     
     SHARED_APPDELEGATE.locationCityModel = queriedCityModel;
     
+    return queriedCityModel;
 }
 
 @end

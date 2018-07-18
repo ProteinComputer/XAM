@@ -11,6 +11,6 @@
 
 @interface LocationCityHandle : NSObject
 
-+ (void)startSearchByLocation:(LocationModel *)locationModel;
++ (CityModel *)startSearchByLocation:(LocationModel *)locationModel;
 
 @end

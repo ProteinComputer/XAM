@@ -12,6 +12,7 @@
 
 #import "WeatherForecastModel.h"
 #import "WeatherCollectionViewCell.h"
+#import "CityListManagerViewController.h"
 
 static NSInteger kCollectionViewCounts = 11;
 
@@ -373,7 +374,13 @@ static NSInteger kCollectionViewCounts = 11;
 
 - (void)addCityManager:(UIButton *)sender {
     
-    NSLog(@"gotoCityManager action!");
+    self.hidesBottomBarWhenPushed = YES;
+    
+    CityListManagerViewController * clmvController = [CityListManagerViewController new];
+    
+    [self.navigationController pushViewController:clmvController animated:YES];
+    
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 //初始化 pageControl 定位图标 城市名称label
