@@ -43,7 +43,7 @@
 
 @property (nonatomic, copy) NSString * liveUpdateTime;
 
-@property (nonatomic, strong) NSData * addDate;
+@property (nonatomic, strong) NSDate * addDate;
 
 - (id)initWithCityModel:(CityModel *)aCityModel;
 

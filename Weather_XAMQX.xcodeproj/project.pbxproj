@@ -71,6 +71,9 @@
 		04E0A22720FE30E90076EDD2 /* WeatherLiveElementsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22620FE30E90076EDD2 /* WeatherLiveElementsModel.m */; };
 		04E0A22A20FE319A0076EDD2 /* CurrentWeatherForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */; };
 		04E0A22D20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22C20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m */; };
+		04E0A23020FF1D470076EDD2 /* ForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A22F20FF1D470076EDD2 /* ForecastModel.m */; };
+		04E0A23320FF1DFC0076EDD2 /* CityInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A23220FF1DFC0076EDD2 /* CityInfoModel.m */; };
+		04E0A23620FF1F830076EDD2 /* HourForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A23520FF1F830076EDD2 /* HourForecastModel.m */; };
 		E4183427E999A10997CAED54 /* libPods-Weather_XAMQX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +201,12 @@
 		04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentWeatherForecastModel.m; sourceTree = "<group>"; };
 		04E0A22B20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCityWeatherForecastTableViewCell.h; sourceTree = "<group>"; };
 		04E0A22C20FE57670076EDD2 /* UserCityWeatherForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCityWeatherForecastTableViewCell.m; sourceTree = "<group>"; };
+		04E0A22E20FF1D470076EDD2 /* ForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastModel.h; sourceTree = "<group>"; };
+		04E0A22F20FF1D470076EDD2 /* ForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastModel.m; sourceTree = "<group>"; };
+		04E0A23120FF1DFC0076EDD2 /* CityInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityInfoModel.h; sourceTree = "<group>"; };
+		04E0A23220FF1DFC0076EDD2 /* CityInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityInfoModel.m; sourceTree = "<group>"; };
+		04E0A23420FF1F830076EDD2 /* HourForecastModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HourForecastModel.h; sourceTree = "<group>"; };
+		04E0A23520FF1F830076EDD2 /* HourForecastModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HourForecastModel.m; sourceTree = "<group>"; };
 		1F7E68CF577B71FDAF17DF9F /* Pods-Weather_XAMQX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0D2456F4B1E871E7C3B43E /* libPods-Weather_XAMQX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather_XAMQX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00C481DD08B8AA10B528B12 /* Pods-Weather_XAMQX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_XAMQX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_XAMQX/Pods-Weather_XAMQX.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +436,12 @@
 				04E0A22620FE30E90076EDD2 /* WeatherLiveElementsModel.m */,
 				04E0A22820FE319A0076EDD2 /* CurrentWeatherForecastModel.h */,
 				04E0A22920FE319A0076EDD2 /* CurrentWeatherForecastModel.m */,
+				04E0A22E20FF1D470076EDD2 /* ForecastModel.h */,
+				04E0A22F20FF1D470076EDD2 /* ForecastModel.m */,
+				04E0A23120FF1DFC0076EDD2 /* CityInfoModel.h */,
+				04E0A23220FF1DFC0076EDD2 /* CityInfoModel.m */,
+				04E0A23420FF1F830076EDD2 /* HourForecastModel.h */,
+				04E0A23520FF1F830076EDD2 /* HourForecastModel.m */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -812,6 +827,7 @@
 				04C4519B20EF484B004466DB /* SBJsonWriter.m in Sources */,
 				0446660D20ECE45100AD3726 /* ForecastViewController.m in Sources */,
 				0446660320ECE19000AD3726 /* BaseViewController.m in Sources */,
+				04E0A23020FF1D470076EDD2 /* ForecastModel.m in Sources */,
 				04E0A20B20FC8CB70076EDD2 /* CityManagerTableViewCell.m in Sources */,
 				04C4533020EFE406004466DB /* LifeIndexTableViewCell.m in Sources */,
 				04C4535C20F4B6B5004466DB /* HotCityModel.m in Sources */,
@@ -832,6 +848,8 @@
 				04C4534820EFFDDA004466DB /* NSString+WPAttributedMarkup.m in Sources */,
 				04E0A22120FD01D10076EDD2 /* CityListTableViewCell.m in Sources */,
 				04C4535920F4B662004466DB /* GenericModel.m in Sources */,
+				04E0A23620FF1F830076EDD2 /* HourForecastModel.m in Sources */,
+				04E0A23320FF1DFC0076EDD2 /* CityInfoModel.m in Sources */,
 				04E0A21220FC9ADE0076EDD2 /* CityListManagerViewController.m in Sources */,
 				04C451EE20EF571A004466DB /* WeatherWarningView.m in Sources */,
 				04C4535520F4A1D5004466DB /* LocationModel.m in Sources */,
