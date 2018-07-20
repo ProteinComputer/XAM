@@ -95,7 +95,7 @@
 
 #define CURRENT_TEMPERATURE_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:90.f]
 
-#define CURRENT_TEMPERATURE_LABEL_FONT_SIZE25 [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25.f]
+#define CURRENT_TEMPERATURE_LABEL_FONT_SIZE25 [UIFont fontWithName:@"HelveticaNeue-Light" size:25.f]
 
 #define CURRENT_TEMPERATURE_UNIT_LABEL_FONT [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.f]
 

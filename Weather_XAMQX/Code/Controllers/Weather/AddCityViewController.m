@@ -73,11 +73,11 @@
     
     self.isShowHotCityView = YES;
     
-    [self addLeftButton];
+//    [self addLeftButton];
     
     [self.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self setRightButtonWithSingleTitle:@"定位" action:@selector(rightButtonAction:) target:self titleColor:[UIColor whiteColor] backgroundImage:[UIImage imageNamed:@"location.png"]];
+//    [self setRightButtonWithSingleTitle:@"定位" action:@selector(rightButtonAction:) target:self titleColor:[UIColor whiteColor] backgroundImage:[UIImage imageNamed:@"location.png"]];
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
 }

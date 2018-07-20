@@ -48,7 +48,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 62;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,7 +108,7 @@
     UserCityWeatherForecastTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UserCityWeatherForecastTableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 62)];
+        cell = [[UserCityWeatherForecastTableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 60)];
     }
     
     WeatherForecastModel * wfModel = [self.mutabelCityArray objectAtIndex:indexPath.row];
@@ -134,17 +134,12 @@
 - (void)initUI {
     
     self.baseTitleLabel.text = @"城市管理";
-    self.contentView.hidden = NO;
-    
-    [self.view addSubview:self.contentView];
-    
+
     [self.contentView addSubview:self.tabelView];
     
-    [self addLeftButton];
     [self.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self setRightButtonWithSingleTitle:@"增加" action:@selector(rightButtonAction:) target:self titleColor:[UIColor whiteColor] backgroundImage:[UIImage imageNamed:@"add"]];
-    
+    [self.rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 
 }
 

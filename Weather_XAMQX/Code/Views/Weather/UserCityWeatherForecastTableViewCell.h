@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) UIImageView * moveImageView;
 
-@property (nonatomic, strong) UIView * weatherImageBackVIew;
+@property (nonatomic, strong) UIView * weatherImageBackView;
 
 @property (nonatomic, strong) UIImageView * weatherImageView;
 
