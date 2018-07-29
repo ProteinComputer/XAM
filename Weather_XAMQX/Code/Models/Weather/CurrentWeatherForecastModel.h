@@ -5,7 +5,7 @@
 //  Created by Jack on 2018/7/17.
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
-//  -> OneForecastModel.h
+//  -> OneForecastModel.h 城市管理未使用
 //
 
 #import "GenericModel.h"

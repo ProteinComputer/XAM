@@ -38,7 +38,7 @@
             
             self.post_code = aCityModel.post_code;
             
-            self.addDate = [NSData data];
+            self.addDate = [NSDate date];
         }
     }
     

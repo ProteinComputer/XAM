@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class WeatherLiveElementsModel, CurrentWeatherForecastModel;
+@class WeatherForecastModel;
 
 @interface UserCityWeatherForecastTableViewCell : UITableViewCell
 
@@ -28,10 +28,6 @@
 
 @property (nonatomic, strong) UIImageView * locationImageView;
 
-@property (nonatomic, strong) WeatherLiveElementsModel * wleModel;
-
-@property (nonatomic, strong) CurrentWeatherForecastModel * cwfModel;
-
-- (void)loadCityName:(NSString *)cityName weatherLiveElementsModel:(WeatherLiveElementsModel *)wleModel currentWeatherForecastModel:(CurrentWeatherForecastModel *)cwfModel;
+@property (nonatomic, strong) WeatherForecastModel * wfModelForCell;
 
 @end

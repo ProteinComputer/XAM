@@ -12,8 +12,7 @@
 
 #import "UserCityWeatherForecastTableViewCell.h"
 
-#import "WeatherLiveElementsModel.h"
-#import "CurrentWeatherForecastModel.h"
+#import "WeatherForecastModel.h"
 
 @interface UserCityWeatherForecastTableViewCell ()
 
@@ -34,10 +33,6 @@
     }
     return self;
 }
-
-#pragma mark - UITabeleViewDelegate.
-
-#pragma mark - UITabelViewDataSource.
 
 #pragma mark - Handlers.
 
@@ -61,29 +56,25 @@
     
 }
 
-- (void)loadCityName:(NSString *)cityName weatherLiveElementsModel:(WeatherLiveElementsModel *)wleModel currentWeatherForecastModel:(CurrentWeatherForecastModel *)cwfModel {
+- (void)setWfModelForCell:(WeatherForecastModel *)wfModelForCell {
     
-    self.cityNameLabel.text = cityName;
-    self.wleModel = wleModel;
-    
-    if (!wleModel && !cwfModel) {
+    if (wfModelForCell) {
+        
+        _wfModelForCell = wfModelForCell;
+        
+        NSDictionary * zdskDict = [_wfModelForCell.forcastContent JSONValue][@"zdsk"];
+
+        NSDictionary * forecastDict =[[_wfModelForCell.forcastContent JSONValue][@"forecast"] firstObject];
+        
+        self.cityNameLabel.text = _wfModelForCell.name;
+        self.weatherImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"weathericon_day_%ld", [forecastDict[@"one_code"] integerValue]]];
+        self.currentForecastLabel.text = [NSString stringWithFormat:@"%@%ld℃~%ld℃", forecastDict[@"one_code_cn"], [forecastDict[@"lowest"] integerValue], [forecastDict[@"highest"] integerValue]];
+        
+        self.currentTemperatureLabel.text = [NSString stringWithFormat:@"%.1f°", [zdskDict[@"temperature"] floatValue]];
+        
+    } else {
         return;
     }
-    
-    if ([cwfModel isKindOfClass:[NSDictionary class]]) {
-        
-        self.cwfModel = [[[CurrentWeatherForecastModel class] mj_objectArrayWithKeyValuesArray:cwfModel] copy];
-    } else {
-        
-        self.cwfModel = (CurrentWeatherForecastModel *)cwfModel;
-    }
-    
-    self.weatherImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"weathericon_day_%ld", self.cwfModel.one_code]];
-    
-    self.currentForecastLabel.text = [NSString stringWithFormat:@"%@%ld℃~%ld℃", self.cwfModel.one_code_cn, self.cwfModel.lowest, self.cwfModel.highest];
-    
-    self.currentTemperatureLabel.text = [NSString stringWithFormat:@"%.1f°", self.wleModel.temperature];
-    
 }
 
 #pragma Getters and setters.
@@ -128,6 +119,7 @@
         _cityNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.weatherImageBackView.frame) + 10, 30 - 18, self.frame.size.width - CGRectGetMaxX(self.weatherImageView.frame) - 100, 15)];
         _cityNameLabel.font = LABEL_FONT_15_BOLD;
         _cityNameLabel.textColor = [UIColor darkGrayColor];
+        _cityNameLabel.text = @"N/A";
     }
     return _cityNameLabel;
 }
@@ -138,7 +130,7 @@
         
         _currentForecastLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.weatherImageBackView.frame) + 10, 30 , self.frame.size.width - CGRectGetMaxX(self.weatherImageView.frame) - 100, 18)];
         _currentForecastLabel.font = LABEL_FONT_13;
-        _currentForecastLabel.text = @"雷阵雨 23℃～29℃";
+        _currentForecastLabel.text = @"N/A N/A℃～N/A℃";
         _currentForecastLabel.textColor = [UIColor grayColor];
     }
     return _currentForecastLabel;
@@ -150,7 +142,7 @@
         
         _currentTemperatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width , 30 - 18, 80, 36)];
         _currentTemperatureLabel.font = CURRENT_TEMPERATURE_LABEL_FONT_SIZE25;
-        _currentTemperatureLabel.text = @"-24.5°";
+        _currentTemperatureLabel.text = @"N/A°";
         _currentTemperatureLabel.textColor = [UIColor colorWithRed:0/255.0 green:147/255.0 blue:247/255.0 alpha:0.5];
     }
     return _currentTemperatureLabel;
@@ -175,24 +167,6 @@
         _dividerView.backgroundColor = [UIColor lightGrayColor];
     }
     return _dividerView;
-}
-
-- (WeatherLiveElementsModel *)wleModel {
-    
-    if (!_wleModel) {
-        
-        _wleModel = [WeatherLiveElementsModel new];
-    }
-    return _wleModel;
-}
-
--(CurrentWeatherForecastModel *)cwfModel {
-    
-    if (!_cwfModel) {
-        
-        _cwfModel = [CurrentWeatherForecastModel new];
-    }
-    return _cwfModel;
 }
 
 @end

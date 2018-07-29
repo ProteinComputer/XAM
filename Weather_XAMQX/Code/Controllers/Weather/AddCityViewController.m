@@ -199,8 +199,6 @@
     
     WeatherForecastModel * exsitWFModel = [[WeatherForecastModel alloc] initWithCityModel:[dbHelper searchSingle:[WeatherForecastModel class] where:[NSString stringWithFormat:@"oid = '%@' and isLocation = 0", currentWFModel.oid] orderBy:nil]];
 
-//    BOOL isExist = [dbHelper isExistsModel:currentWFModel];
-    
     if (!exsitWFModel) {
         
         NSArray * array = [dbHelper search:[WeatherForecastModel class] where:nil orderBy:nil offset:0 count:100];
@@ -240,10 +238,6 @@
     }
     return NO;
 }
-
-#pragma mark -
-
-//- (BOOL)hotCityCollectionView:()
 
 #pragma mark - UITableViewDelegate.
 
@@ -418,18 +412,9 @@
 - (NSMutableArray *)hotCityArray {
     
     if (!_hotCityArray) {
-        _hotCityArray = [NSArray array];
+        _hotCityArray = [NSMutableArray array];
     }
     return _hotCityArray;
 }
 
 @end
-
-
-
-
-
-
-
-
-

@@ -113,9 +113,7 @@
     
     WeatherForecastModel * wfModel = [self.mutabelCityArray objectAtIndex:indexPath.row];
     
-    ForecastModel * cellForecastModel = [[ForecastModel class] mj_objectWithKeyValues:[wfModel.forcastContent JSONValue]];
-    
-    [cell loadCityName:wfModel.name weatherLiveElementsModel:cellForecastModel.wleModel currentWeatherForecastModel:[[cellForecastModel cwfModelArray] firstObject]];
+    cell.wfModelForCell = wfModel;
     
     if ([wfModel.isLocation integerValue] == 1) {
         
@@ -227,10 +225,11 @@
                     center.y = location.y;
                     
                     snapshot.center = center;
-                    snapshot.transform = CGAffineTransformMakeScale(1.05, 1.05);
+                    snapshot.transform = CGAffineTransformMakeScale(1, 1);
                     snapshot.alpha = 0.98;
                     
                     cell.alpha = 0;
+                    
                 } completion:^(BOOL finished) {
                     
                     cell.hidden = YES;
@@ -279,7 +278,8 @@
                     
                     model.addDate = [NSDate dateWithTimeIntervalSince1970:yuanziTime++];
                     
-                    [SHARED_APPDELEGATE.getDBHander updateToDB:model where:[NSString stringWithFormat:@"rowid = %ld", model.rowid]];
+                    BOOL db = [SHARED_APPDELEGATE.getDBHander updateToDB:model where:[NSString stringWithFormat:@"rowid = %ld", model.rowid]];
+                    NSLog(@"db %d", db);
                 }
                 
             } completion:^(BOOL finished) {
