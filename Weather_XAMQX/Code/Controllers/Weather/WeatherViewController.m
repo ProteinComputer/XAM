@@ -396,7 +396,7 @@ static NSInteger kCollectionViewCounts = 11;
         [self.userCityMutableArray removeAllObjects];
     }
     
-    self.userCityMutableArray = [NSMutableArray array];
+    self.userCityMutableArray = [[NSMutableArray alloc] initWithArray:array];
     
     array = nil;
     
@@ -597,6 +597,14 @@ static NSInteger kCollectionViewCounts = 11;
         }
     }
     return _collectionView;
+}
+
+- (NSMutableArray *)userCityMutableArray {
+    
+    if (!_userCityMutableArray) {
+        _userCityMutableArray = [NSMutableArray array];
+    }
+    return _userCityMutableArray;
 }
 
 #pragma mark - UICollectionViewDelegate.
