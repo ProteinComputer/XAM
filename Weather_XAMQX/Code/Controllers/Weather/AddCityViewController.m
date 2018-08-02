@@ -5,6 +5,8 @@
 //  Created by Jack on 2018/7/16.
 //  Copyright © 2018年 com.dyfc. All rights reserved.
 //
+//  -> LxNewAddCityViewController
+//
 
 #import "AddCityViewController.h"
 
@@ -16,18 +18,22 @@
 #import "CityListTableViewCell.h"
 #import "CityListManagerViewController.h"
 #import "WeatherForecastLoader.h"
+#import "LocationCityHandle.h"
+
 
 @interface AddCityViewController () <UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchResultsUpdating, LocationServiceDelegate, HotCityCollectionViewDelegate>
 
 @property (nonatomic, strong) UITableView * tableView;
 
+@property (nonatomic, strong) UIButton * reLocationButton;
+
 @property (nonatomic, strong) UISearchController * searchController;
 
-@property (nonatomic, strong) NSArray * pinyinAndCapitalLetterArray;
+@property (nonatomic, strong) NSArray * pinyinAndCapitalLetterArray;//城市拼音大写字母
 
-@property (nonatomic, strong) NSArray * placeNameArray;
+@property (nonatomic, strong) NSArray * placeNameArray;//城市名称
 
-@property (nonatomic, strong) NSArray * cityIndexArray;
+@property (nonatomic, strong) NSArray * cityIndexArray;//城市索引
 
 @property (nonatomic, strong) NSMutableArray * hotCityArray;
 
@@ -47,6 +53,8 @@
     [self initUI];
     
     [self loadData];
+    
+    [self initLocationCity];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -73,13 +81,12 @@
     
     self.isShowHotCityView = YES;
     
-//    [self addLeftButton];
-    
     [self.leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-//    [self setRightButtonWithSingleTitle:@"定位" action:@selector(rightButtonAction:) target:self titleColor:[UIColor whiteColor] backgroundImage:[UIImage imageNamed:@"location.png"]];
+    self.rightButton.hidden = YES;
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    [self.view addSubview:self.reLocationButton];
 }
 
 - (void)loadData {
@@ -91,16 +98,30 @@
     [self loadHotCity];
 }
 
+- (void)initLocationCity {
+    
+    [LocationCityHandle startSearchByLocation:SHARED_APPDELEGATE.locationModel];
+}
+
 - (void)leftButtonAction:(UIButton *)sender {
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)rightButtonAction:(UIButton *)sender {
+- (void)reStartLocation:(UIButton *)sender {
     
     self.locationServiceHandle.delegate = self;
     [self.locationServiceHandle initLocationService];
 }
 
+
+
+/**
+ 城市拼音产生
+
+ @param array 城市数组
+ @return 拼音数组
+ */
 - (NSArray *)configPYCLArrayFrom:(NSArray *)array {
     
     NSInteger index = 0;
@@ -175,16 +196,23 @@
 
 - (void)loadHotCity {
     
-    NSArray * tempArray = [SHARED_APPDELEGATE.getDBHander search:[HotCityModel class] where:@"" orderBy:nil offset:0 count:100];
+    NSArray * tempArray = [SHARED_APPDELEGATE.getDBHander search:[HotCityModel class] where:@"" orderBy:nil offset:0 count:100];//热门城市数组
     
     [self.hotCityArray removeAllObjects];
     
-    for (HotCityModel * hotCityModel in tempArray) {
+    for (HotCityModel * hotCityModel in tempArray) {//判断是否已经添加
         
-        if ([SHARED_APPDELEGATE.getDBHander searchSingle:[WeatherForecastModel class] where:[NSString stringWithFormat:@"oid = %ld", hotCityModel.city_oid] orderBy:nil]) {
+        if ([SHARED_APPDELEGATE.getDBHander
+             searchSingle:[WeatherForecastModel class]
+             where:[NSString stringWithFormat:@"oid = %ld", hotCityModel.city_oid]
+             orderBy:nil]) {
+            
             hotCityModel.addState = YES;
+            
         } else {
+            
             hotCityModel.addState = NO;
+            
         }
         [self.hotCityArray addObject:hotCityModel];
     }
@@ -239,14 +267,20 @@
     return NO;
 }
 
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+}
+
 #pragma mark - UITableViewDelegate.
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return (section == 0 && self.isShowHotCityView) ? (50 + 40 * self.hotCityArray.count / 4 + ((self.hotCityArray.count % 4 == 0) ? 0 : 1)) : 30;
+    return (section == 0 && self.isShowHotCityView) ? (50 + 40 * self.hotCityArray.count / 4) + ((self.hotCityArray.count % 4 == 0) ? 0 : 1) : 30;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -255,9 +289,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, (section == 0 && self.isShowHotCityView) ? (50 + 40 * self.hotCityArray.count / 4 + ((self.hotCityArray.count % 4 == 0) ? 0 : 1)) : 30)];
+    UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
     
-    headerView.backgroundColor = [UIColor clearColor];
+    headerView.backgroundColor = [UIColor getColorWithHexString:@"#eeeeee"];
     
     //索引
     NSDictionary * titleDic = self.pinyinAndCapitalLetterArray[section];
@@ -353,6 +387,8 @@
         
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        
+        _tableView.tableHeaderView = self.searchController.searchBar;
     }
     return _tableView;
 }
@@ -369,6 +405,7 @@
         _searchController.delegate = self;
         
         _searchController.dimsBackgroundDuringPresentation = NO;
+        
     }
     return _searchController;
 }
@@ -415,6 +452,19 @@
         _hotCityArray = [NSMutableArray array];
     }
     return _hotCityArray;
+}
+
+- (UIButton *)reLocationButton {
+    
+    if (!_reLocationButton) {
+        
+        _reLocationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _reLocationButton.frame = CGRectMake(SCREEN_WIDTH - 50, 27, 40, 30);
+        [_reLocationButton setImage:[UIImage imageNamed:@"location.png"] forState:0];
+        [_reLocationButton addTarget:self action:@selector(reStartLocation:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _reLocationButton;
 }
 
 @end

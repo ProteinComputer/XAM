@@ -12,6 +12,7 @@
 
 @protocol LocationServiceDelegate <NSObject>
 
+@optional
 - (void)didStartLocationService:(LocationServiceHandle *)locationServiceHandle;
 
 - (void)didFailLocationService:(LocationServiceHandle *)locationServiceHandle;

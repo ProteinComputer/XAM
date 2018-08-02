@@ -14,6 +14,7 @@
 
 @protocol HotCityCollectionViewDelegate <NSObject>
 
+@optional
 - (BOOL)hotCityView:(HotCityCollectionView *)hotCityView hotCityModel:(HotCityModel *)hotCityModel;
 
 @end
